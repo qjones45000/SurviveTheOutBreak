@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: 5368f4e3c2858714fb48fab75d8f15ae
+timeCreated: 1539790615
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bone001
+    100002: Bone002
+    100004: Bone003
+    100006: Bone004
+    100008: Bone005
+    100010: Bone006
+    100012: Bone007
+    100014: Bone008
+    100016: Bone009
+    100018: creature_head_bone
+    100020: creature_headnub_bone
+    100022: creature_l_arm_bone
+    100024: creature_l_clav_bone
+    100026: creature_l_foot_bone
+    100028: creature_l_forearm_bone
+    100030: creature_l_index2_bone
+    100032: creature_l_index3_bone
+    100034: creature_l_index3_bone 1
+    100036: creature_l_index3nub_bone
+    100038: creature_l_knee_bone
+    100040: creature_l_pointfinger1_bone
+    100042: creature_l_pointfinger1nub_bone
+    100044: creature_l_pointfinger2_bone
+    100046: creature_l_pointfinger3_bone
+    100048: creature_l_shin2_bone
+    100050: creature_l_shin_bone
+    100052: creature_l_shoulder_bone
+    100054: creature_l_thigh2_bone
+    100056: creature_l_thigh_bone
+    100058: creature_l_thumb1_bone
+    100060: creature_l_thumb1nub_bone
+    100062: creature_l_thumb2_bone
+    100064: creature_l_thumb3_bone
+    100066: creature_l_toe_bone
+    100068: creature_l_toenub_bone
+    100070: creature_l_winghead_bone
+    100072: creature_l_wingindex1_bone
+    100074: creature_l_wingindex2_bone
+    100076: creature_l_wingindex3_bone
+    100078: creature_l_wingindex3nub_bone
+    100080: creature_l_wrist_bone
+    100082: creature_neck_bone
+    100084: creature_pelvis_bone
+    100086: creature_pelvisnub_bone
+    100088: creature_r_arm_bone
+    100090: creature_r_clav_bone
+    100092: creature_r_forearm_bone
+    100094: creature_r_hand001_bone
+    100096: creature_r_handnub001_bone
+    100098: creature_r_index2__bone
+    100100: creature_r_index3__bone
+    100102: creature_r_index3__bone 1
+    100104: creature_r_index3nub__bone
+    100106: creature_r_l_foot_bone
+    100108: creature_r_l_knee_bone
+    100110: creature_r_l_shin2_bone
+    100112: creature_r_l_shin_bone
+    100114: creature_r_l_thigh2_bone
+    100116: creature_r_l_thigh_bone
+    100118: creature_r_l_toe_bone
+    100120: creature_r_pointfinger1__bone
+    100122: creature_r_pointfinger1nub__bone
+    100124: creature_r_pointfinger2__bone
+    100126: creature_r_pointfinger3__bone
+    100128: creature_r_shoulder_bone
+    100130: creature_r_thumb1__bone
+    100132: creature_r_thumb1nub__bone
+    100134: creature_r_thumb2__bone
+    100136: creature_r_thumb3__bone
+    100138: creature_r_winghead_bone
+    100140: creature_r_wingindex1_bone
+    100142: creature_r_wingindex2_bone
+    100144: creature_r_wingindex3_bone
+    100146: creature_r_wrist2_bone
+    100148: creature_r_wrist_bone
+    100150: creature_spine 1_bone
+    100152: creature_spine 2_bone
+    100154: creature_spine 3_bone
+    100156: creature_tonguemiddle2_bone
+    100158: creature_tonguemiddle_bone
+    100160: creature_tonguend_bone
+    100162: creature_tonguetip_bone
+    100164: creature_tonguetipnub_bone
+    100166: hand
+    100168: handnub
+    100170: //RootNode
+    100172: IK Chain001
+    100174: IK Chain004
+    100176: IK Chain005
+    100178: IK Chain006
+    400000: Bone001
+    400002: Bone002
+    400004: Bone003
+    400006: Bone004
+    400008: Bone005
+    400010: Bone006
+    400012: Bone007
+    400014: Bone008
+    400016: Bone009
+    400018: creature_head_bone
+    400020: creature_headnub_bone
+    400022: creature_l_arm_bone
+    400024: creature_l_clav_bone
+    400026: creature_l_foot_bone
+    400028: creature_l_forearm_bone
+    400030: creature_l_index2_bone
+    400032: creature_l_index3_bone
+    400034: creature_l_index3_bone 1
+    400036: creature_l_index3nub_bone
+    400038: creature_l_knee_bone
+    400040: creature_l_pointfinger1_bone
+    400042: creature_l_pointfinger1nub_bone
+    400044: creature_l_pointfinger2_bone
+    400046: creature_l_pointfinger3_bone
+    400048: creature_l_shin2_bone
+    400050: creature_l_shin_bone
+    400052: creature_l_shoulder_bone
+    400054: creature_l_thigh2_bone
+    400056: creature_l_thigh_bone
+    400058: creature_l_thumb1_bone
+    400060: creature_l_thumb1nub_bone
+    400062: creature_l_thumb2_bone
+    400064: creature_l_thumb3_bone
+    400066: creature_l_toe_bone
+    400068: creature_l_toenub_bone
+    400070: creature_l_winghead_bone
+    400072: creature_l_wingindex1_bone
+    400074: creature_l_wingindex2_bone
+    400076: creature_l_wingindex3_bone
+    400078: creature_l_wingindex3nub_bone
+    400080: creature_l_wrist_bone
+    400082: creature_neck_bone
+    400084: creature_pelvis_bone
+    400086: creature_pelvisnub_bone
+    400088: creature_r_arm_bone
+    400090: creature_r_clav_bone
+    400092: creature_r_forearm_bone
+    400094: creature_r_hand001_bone
+    400096: creature_r_handnub001_bone
+    400098: creature_r_index2__bone
+    400100: creature_r_index3__bone
+    400102: creature_r_index3__bone 1
+    400104: creature_r_index3nub__bone
+    400106: creature_r_l_foot_bone
+    400108: creature_r_l_knee_bone
+    400110: creature_r_l_shin2_bone
+    400112: creature_r_l_shin_bone
+    400114: creature_r_l_thigh2_bone
+    400116: creature_r_l_thigh_bone
+    400118: creature_r_l_toe_bone
+    400120: creature_r_pointfinger1__bone
+    400122: creature_r_pointfinger1nub__bone
+    400124: creature_r_pointfinger2__bone
+    400126: creature_r_pointfinger3__bone
+    400128: creature_r_shoulder_bone
+    400130: creature_r_thumb1__bone
+    400132: creature_r_thumb1nub__bone
+    400134: creature_r_thumb2__bone
+    400136: creature_r_thumb3__bone
+    400138: creature_r_winghead_bone
+    400140: creature_r_wingindex1_bone
+    400142: creature_r_wingindex2_bone
+    400144: creature_r_wingindex3_bone
+    400146: creature_r_wrist2_bone
+    400148: creature_r_wrist_bone
+    400150: creature_spine 1_bone
+    400152: creature_spine 2_bone
+    400154: creature_spine 3_bone
+    400156: creature_tonguemiddle2_bone
+    400158: creature_tonguemiddle_bone
+    400160: creature_tonguend_bone
+    400162: creature_tonguetip_bone
+    400164: creature_tonguetipnub_bone
+    400166: hand
+    400168: handnub
+    400170: //RootNode
+    400172: IK Chain001
+    400174: IK Chain004
+    400176: IK Chain005
+    400178: IK Chain006
+    7400000: idle
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

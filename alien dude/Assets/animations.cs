@@ -6,6 +6,7 @@ public class animations : MonoBehaviour {
 
    private Animator _anim;
     public float MaxSpeed = 50f;
+    public float backspeed = 10f;
 
 	// Use this for initialization
 	void Start ()
@@ -24,7 +25,7 @@ public class animations : MonoBehaviour {
 
         Move(x, y);
 
-      
+
 
 	}
 
@@ -33,7 +34,8 @@ public class animations : MonoBehaviour {
         _anim.SetFloat("Vy", y);
         _anim.SetFloat("Vx" , x);
 
-        transform.position += Vector3.forward *MaxSpeed * x * Time.deltaTime;
+        transform.position += Vector3.forward * MaxSpeed * x * Time.deltaTime;
+        transform.position -= Vector3. back * backspeed * -x * Time.deltaTime;
         transform.position += Vector3.right * MaxSpeed * y * Time.deltaTime;
     }
 

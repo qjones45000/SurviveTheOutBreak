@@ -9,6 +9,7 @@ public class BasicBehaviour : MonoBehaviour
 	public float turnSmoothing = 0.06f;                   // Speed of turn when moving to match camera facing.
 	public float sprintFOV = 100f;                        // the FOV to use on the camera when player is sprinting.
 	public string sprintButton = "Sprint";                // Default sprint button input name.
+   
 
 	private float h;                                      // Horizontal Axis.
 	private float v;                                      // Vertical Axis.
@@ -28,9 +29,20 @@ public class BasicBehaviour : MonoBehaviour
 	private int groundedBool;                             // Animator variable related to whether or not the player is on the ground.
 	private Vector3 colExtents;                           // Collider extents for ground test. 
 
-	// Get current horizontal and vertical axes.
-	public float GetH { get { return h; } }
+    private bool Magic;     
+    private float Combath;
+    private float Combatv;
+    public string CombatButton = "Combat";
+    private int ChFloat;
+    private int CvFloat;
+
+    // Get current horizontal and vertical axes.
+    public float GetH { get { return h; } }
 	public float GetV { get { return v; } }
+
+    // Horizontal and Veticle axis for magic movement.
+    public float GetCh { get { return Combath; } }
+    public float GetCv { get { return Combatv; } }
 
 	// Get the player camera script.
 	public ThirdPersonOrbitCamBasic GetCamScript { get { return camScript; } }
@@ -55,6 +67,10 @@ public class BasicBehaviour : MonoBehaviour
 		camScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic> ();
 		rBody = GetComponent<Rigidbody> ();
 
+        // for magic movement.
+        ChFloat = Animator.StringToHash("Ch");
+        CvFloat = Animator.StringToHash("Cv");
+
 		// Grounded verification variables.
 		groundedBool = Animator.StringToHash("Grounded");
 		colExtents = GetComponent<Collider>().bounds.extents;
@@ -63,29 +79,35 @@ public class BasicBehaviour : MonoBehaviour
 	void Update()
 	{
 		// Store the input axes.
-		h = Input.GetAxis("Horizontal");
-		v = Input.GetAxis("Vertical");
+    
+        {
 
-		// Set the input axes on the Animator Controller.
-		anim.SetFloat(hFloat, h, 0.1f, Time.deltaTime);
-		anim.SetFloat(vFloat, v, 0.1f, Time.deltaTime);
+            h = Input.GetAxis("Horizontal");
+            v = Input.GetAxis("Vertical");
 
-		// Toggle sprint by input.
-		sprint = Input.GetButton (sprintButton);
+            // Set the input axes on the Animator Controller.
+            anim.SetFloat(hFloat, h, 0.1f, Time.deltaTime);
+            anim.SetFloat(vFloat, v, 0.1f, Time.deltaTime);
 
-		// Set the correct camera FOV for sprint mode.
-		if(IsSprinting())
-		{
-			changedFOV = true;
-			camScript.SetFOV(sprintFOV);
-		}
-		else if(changedFOV)
-		{
-			camScript.ResetFOV();
-			changedFOV = false;
-		}
-		// Set the grounded test on the Animator Controller.
-		anim.SetBool(groundedBool, IsGrounded());
+            // Toggle sprint by input.
+            sprint = Input.GetButton(sprintButton);
+
+            // Set the correct camera FOV for sprint mode.
+            if (IsSprinting())
+            {
+                changedFOV = true;
+                camScript.SetFOV(sprintFOV);
+            }
+            else if (changedFOV)
+            {
+                camScript.ResetFOV();
+                changedFOV = false;
+            }
+            // Set the grounded test on the Animator Controller.
+            anim.SetBool(groundedBool, IsGrounded());
+        }
+
+
 	}
 
 	// Call the FixedUpdate functions of the active or overriding behaviours.

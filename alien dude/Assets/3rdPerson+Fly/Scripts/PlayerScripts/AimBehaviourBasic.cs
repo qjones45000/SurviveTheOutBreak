@@ -9,7 +9,7 @@ public class AimBehaviourBasic : GenericBehaviour
 	public float aimTurnSmoothing = 0.15f;                                // Speed of turn response when aiming to match camera facing.
 	public Vector3 aimPivotOffset = new Vector3(0.5f, 1.2f,  0f);         // Offset to repoint the camera when aiming.
 	public Vector3 aimCamOffset   = new Vector3(0f, 0.4f, -0.7f);         // Offset to relocate the camera when aiming.
-
+    private Animator anim;
 	private int aimBool;                                                  // Animator variable related to aiming.
 	private bool aim;                                                     // Boolean to determine whether or not the player is aiming.
 
@@ -18,6 +18,7 @@ public class AimBehaviourBasic : GenericBehaviour
 	{
 		// Set up the references.
 		aimBool = Animator.StringToHash("Aim");
+        anim = GetComponent<Animator>();
 	}
 
 	// Update is used to set features regardless the active behaviour.
@@ -27,6 +28,7 @@ public class AimBehaviourBasic : GenericBehaviour
 		if (Input.GetAxisRaw(aimButton) != 0 && !aim)
 		{
 			StartCoroutine(ToggleAimOn());
+            
 		}
 		else if (aim && Input.GetAxisRaw(aimButton) == 0)
 		{
@@ -66,6 +68,7 @@ public class AimBehaviourBasic : GenericBehaviour
 			behaviourManager.GetAnim.SetFloat(speedFloat, 0);
 			// This state overrides the active one.
 			behaviourManager.OverrideWithBehaviour(this);
+           
 		}
 	}
 

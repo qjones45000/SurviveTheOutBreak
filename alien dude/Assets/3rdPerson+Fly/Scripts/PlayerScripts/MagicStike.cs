@@ -14,6 +14,7 @@ public class MagicStike : MonoBehaviour {
 	void Start ()
     {
         anim = GetComponent<Animator>();
+        Magic = false;
 
         MagicBool = Animator.StringToHash("Magic");
         speed = Animator.StringToHash("Speed");
@@ -22,18 +23,27 @@ public class MagicStike : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-     
-    
+
         if (Input.GetKeyDown("j"))
         {
             Magic = true;
             anim.SetBool(MagicBool, true);
+
+            StartCoroutine(HoldAnim());
+
         }
 
-        if(Input.GetKeyDown("j"))
-        {
-            anim.Play("Idle");
-        }
+
+     
+
+       
+        
+           
+           
+            
+        
+
+  
 
         if(Input.GetKeyDown("j") && speed <=0 )
         {
@@ -46,4 +56,16 @@ public class MagicStike : MonoBehaviour {
      
 
     }
+
+    private IEnumerator HoldAnim()
+    {
+      if(Magic == true)
+        {
+            yield return new WaitForSeconds(5);
+            Magic = false;
+            anim.SetBool(MagicBool, false);
+        }  
+    }
+
+   
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18d22c0ab9f74e640a9964fa8bae2ef5
+guid: bc437f5d5b27ea54fbf8915392251390
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -125,7 +125,7 @@ ModelImporter:
     4300008: Group256
     4300010: Group768
     4300012: Group513
-    7400000: mixamo.com
+    7400000: MagicShot
     9500000: //RootNode
     13700000: Group1024
     13700002: Group256
@@ -134,7 +134,6 @@ ModelImporter:
     13700008: Group768
     13700010: Group769
     13700012: ZBrush_defualt_group
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -164,10 +163,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
-      takeName: mixamo.com
+      name: MagicShot
+      takeName: Take 001
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -175,7 +174,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -222,7 +221,7 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human:
@@ -843,7 +842,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 18d22c0ab9f74e640a9964fa8bae2ef5,
+    type: 3}
   animationType: 3
   humanoidOversampling: 1
   additionalBone: 0

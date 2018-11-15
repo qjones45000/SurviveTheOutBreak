@@ -12,6 +12,8 @@ public class AimBehaviourBasic : GenericBehaviour
     private Animator anim;
 	private int aimBool;                                                  // Animator variable related to aiming.
 	private bool aim;                                                     // Boolean to determine whether or not the player is aiming.
+    private int MagicBlastBool;
+    private bool MagicShot;
 
 	// Start is always called after any Awake functions.
 	void Start ()
@@ -19,6 +21,8 @@ public class AimBehaviourBasic : GenericBehaviour
 		// Set up the references.
 		aimBool = Animator.StringToHash("Aim");
         anim = GetComponent<Animator>();
+    
+        
 	}
 
 	// Update is used to set features regardless the active behaviour.
@@ -29,11 +33,13 @@ public class AimBehaviourBasic : GenericBehaviour
 		{
 			StartCoroutine(ToggleAimOn());
             
-		}
+
+        }
 		else if (aim && Input.GetAxisRaw(aimButton) == 0)
 		{
 			StartCoroutine(ToggleAimOff());
-		}
+          
+        }
 
 		// No sprinting while aiming.
 		canSprint = !aim;
@@ -66,6 +72,7 @@ public class AimBehaviourBasic : GenericBehaviour
 			aimPivotOffset.x = Mathf.Abs(aimPivotOffset.x) * signal;
 			yield return new WaitForSeconds(0.1f);
 			behaviourManager.GetAnim.SetFloat(speedFloat, 0);
+         
 			// This state overrides the active one.
 			behaviourManager.OverrideWithBehaviour(this);
            
@@ -80,6 +87,7 @@ public class AimBehaviourBasic : GenericBehaviour
 		behaviourManager.GetCamScript.ResetTargetOffsets();
 		behaviourManager.GetCamScript.ResetMaxVerticalAngle();
 		yield return new WaitForSeconds(0.05f);
+        
 		behaviourManager.RevokeOverridingBehaviour(this);
 	}
 
@@ -135,4 +143,6 @@ public class AimBehaviourBasic : GenericBehaviour
 										 crosshair.width, crosshair.height), crosshair);
 		}
 	}
+
+
 }

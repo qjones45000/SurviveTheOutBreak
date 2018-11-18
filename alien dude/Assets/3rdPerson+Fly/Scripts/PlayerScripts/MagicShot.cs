@@ -2,28 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicShot : MonoBehaviour {
+public class MagicShot : MonoBehaviour
+{
 
     private Animator anim;
+
+    
+
+
 
     private AnimatorStateInfo currentBaseState;
     private AnimatorStateInfo MagicAimsCurrentState;
     private AnimatorStateInfo LayerPunchState;
+    private AnimatorStateInfo MagicStrikeCurrentState;
 
     static int idle = Animator.StringToHash("Base Layer.Idle");
     static int Aim = Animator.StringToHash("MagicAim.MagicShot");
     static int LocoMove = Animator.StringToHash("Base Layer.Locomotion");
     static int Punching = Animator.StringToHash("LayerPunchState.Punching");
+    static int MagicStance = Animator.StringToHash("Base Layer.Standing Idle");
+    static int MagicMove = Animator.StringToHash("Base Layer.magic movement");
+    static int Strike = Animator.StringToHash("MagicStrikeCurrentState.magic strike");
+    static int ActualStrike = Animator.StringToHash("MagicStrikeCurrentState.strike");
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         anim = GetComponent<Animator>();
 
         if (anim.layerCount == 4)
             anim.SetLayerWeight(1, 1);
-		
-	}
+
+    }
 
     private void FixedUpdate()
     {
@@ -35,16 +45,24 @@ public class MagicShot : MonoBehaviour {
         if (anim.layerCount == 5)
             LayerPunchState = anim.GetCurrentAnimatorStateInfo(2);
 
+        if (anim.layerCount == 6)
+            MagicStrikeCurrentState = anim.GetCurrentAnimatorStateInfo(3);
+
+
         if (currentBaseState.nameHash == idle || currentBaseState.nameHash == LocoMove)
         {
-            if (Input.GetKey("k"))
+            if (Input.GetKey("v"))
             {
                 anim.SetBool("MagicShot", true);
+
+
             }
             else
             {
                 anim.SetBool("MagicShot", false);
             }
+
+
             if (Input.GetKeyDown("p"))
             {
                 anim.SetBool("Punching", true);
@@ -53,18 +71,104 @@ public class MagicShot : MonoBehaviour {
             {
                 anim.SetBool("Punching", false);
             }
-        
-        }
-     
-        
 
+
+            if (Input.GetKeyDown("j"))
+            {
+                anim.SetBool("Standing Idle", true);
+
+            }
+            
+
+
+        }
+
+
+        if (currentBaseState.nameHash == LocoMove)
+        {
+            if (Input.GetKeyDown("j"))
+            {
+                anim.Play("magic movement");
+            }
+        }
+
+        if (currentBaseState.nameHash == MagicStance)
+        {
+            if (Input.GetKeyDown("j"))
+            {
+                anim.SetBool("Standing Idle", false);
+            }
+
+            if (Input.GetKey("l"))
+            {
+                anim.SetBool("MagicStrike", true);
+            }
+            else
+            {
+                anim.SetBool("MagicStrike", false);
+            }
+
+            if (Input.GetKeyUp("l"))
+            {
+                anim.Play("strike");
+            }
+
+            if (Input.GetKeyDown("m"))
+            {
+                anim.Play("AreaAttack");
+            }
+        }
+
+        if (currentBaseState.nameHash == MagicMove)
+        {
+            if (Input.GetKeyDown("j"))
+            {
+                anim.Play("Idle");
+            }
+
+            if (Input.GetKey("l"))
+            {
+                anim.SetBool("MagicStrike", true);
+            }
+            else
+            {
+                anim.SetBool("MagicStrike", false);
+            }
+
+            if (Input.GetKeyUp("l"))
+            {
+                anim.Play("strike");
+            }
+
+            if (Input.GetKeyDown("m"))
+            {
+                anim.Play("AreaAttack");
+            }
+        }
+
+    }
 
 
 
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
-}
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+    
+           
+        
+       
+ 
+

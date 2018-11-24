@@ -15,18 +15,32 @@ public class AimBehaviourBasic : GenericBehaviour
     private int MagicBlastBool;
     private bool MagicShot;
 
-	// Start is always called after any Awake functions.
-	void Start ()
+    private AnimatorStateInfo currentBaseState;
+
+    static int MagicStance = Animator.StringToHash("Base Layer.Standing Idle");
+
+    // Start is always called after any Awake functions.
+    void Start ()
 	{
 		// Set up the references.
 		aimBool = Animator.StringToHash("Aim");
         anim = GetComponent<Animator>();
-    
         
-	}
 
-	// Update is used to set features regardless the active behaviour.
-	void Update ()
+    }
+
+    private void FixedUpdate()
+    {
+        currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
+
+        if (currentBaseState.nameHash == MagicStance)
+        {
+            Rotating();
+        }
+    }
+
+    // Update is used to set features regardless the active behaviour.
+    void Update ()
 	{
 		// Activate/deactivate aim by input.
 		if (Input.GetAxisRaw(aimButton) != 0 && !aim)

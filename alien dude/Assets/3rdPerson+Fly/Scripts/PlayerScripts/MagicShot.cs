@@ -7,7 +7,16 @@ public class MagicShot : MonoBehaviour
 
     private Animator anim;
 
+    public float speed;
+
+    public RotateToMouse rotatetomouse;
+
     
+
+    public Transform spawn;
+    private GameObject spell;
+    public List<GameObject> vfx = new List<GameObject>();
+
 
 
 
@@ -33,6 +42,7 @@ public class MagicShot : MonoBehaviour
         if (anim.layerCount == 4)
             anim.SetLayerWeight(1, 1);
 
+        spell = vfx[0];
     }
 
     private void FixedUpdate()
@@ -111,6 +121,8 @@ public class MagicShot : MonoBehaviour
             if (Input.GetKeyUp("l"))
             {
                 anim.Play("strike");
+                spawnfx();
+
             }
 
             if (Input.GetKeyDown("m"))
@@ -138,19 +150,56 @@ public class MagicShot : MonoBehaviour
             if (Input.GetKeyUp("l"))
             {
                 anim.Play("strike");
+                spawnfx();
             }
 
             if (Input.GetKeyDown("m"))
             {
                 anim.Play("AreaAttack");
             }
+
         }
 
+       
+
+
+    }
+
+    void spawnfx()
+    {
+        GameObject vfx;
+
+
+
+
+
+        if(spawn != null)
+        {
+            vfx = Instantiate(spell, spawn.transform.position + transform.forward, Quaternion.identity);
+            if(rotatetomouse != null)
+            {
+                vfx.transform.localRotation = rotatetomouse.GetRotation();
+            }
+        }
+      
+
+  
+     
+
+
+
+
+
+
     }
 
 
 
-    }
+
+
+}
+
+
 
 
 

@@ -15,9 +15,16 @@ public class AimBehaviourBasic : GenericBehaviour
     private int MagicBlastBool;
     private bool MagicShot;
 
+
+  
+
+
     private AnimatorStateInfo currentBaseState;
+    private AnimatorStateInfo MagicAimsCurrentState;
 
     static int MagicStance = Animator.StringToHash("Base Layer.Standing Idle");
+    static int Aim = Animator.StringToHash("MagicAim.MagicShot");
+
 
     // Start is always called after any Awake functions.
     void Start ()
@@ -32,10 +39,16 @@ public class AimBehaviourBasic : GenericBehaviour
     private void FixedUpdate()
     {
         currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
+        if (anim.layerCount == 4)
+            MagicAimsCurrentState = anim.GetCurrentAnimatorStateInfo(1);
 
         if (currentBaseState.nameHash == MagicStance)
         {
             Rotating();
+
+            
+
+
         }
     }
 
@@ -46,13 +59,15 @@ public class AimBehaviourBasic : GenericBehaviour
 		if (Input.GetAxisRaw(aimButton) != 0 && !aim)
 		{
 			StartCoroutine(ToggleAimOn());
+          
             
 
         }
 		else if (aim && Input.GetAxisRaw(aimButton) == 0)
 		{
 			StartCoroutine(ToggleAimOff());
-          
+           
+
         }
 
 		// No sprinting while aiming.
@@ -67,6 +82,14 @@ public class AimBehaviourBasic : GenericBehaviour
 
 		// Set aim boolean on the Animator Controller.
 		behaviourManager.GetAnim.SetBool (aimBool, aim);
+        if (Input.GetKey("v"))
+        {
+            anim.SetBool("MagicShot", true);
+        }
+        else
+        {
+            anim.SetBool("MagicShot", false);
+        }
 	}
 
 	// Co-rountine to start aiming mode with delay.
@@ -86,9 +109,17 @@ public class AimBehaviourBasic : GenericBehaviour
 			aimPivotOffset.x = Mathf.Abs(aimPivotOffset.x) * signal;
 			yield return new WaitForSeconds(0.1f);
 			behaviourManager.GetAnim.SetFloat(speedFloat, 0);
+
+            if (Input.GetKey("v"))
+            {
+                anim.SetBool("MagicShot", true);
+            }
+          
          
 			// This state overrides the active one.
 			behaviourManager.OverrideWithBehaviour(this);
+
+
            
 		}
 	}

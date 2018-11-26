@@ -11,6 +11,8 @@ public class MagicShot : MonoBehaviour
 
     public RotateToMouse rotatetomouse;
 
+   
+
     
 
     public Transform spawn;
@@ -151,6 +153,7 @@ public class MagicShot : MonoBehaviour
             {
                 anim.Play("strike");
                 spawnfx();
+                
             }
 
             if (Input.GetKeyDown("m"))
@@ -171,16 +174,23 @@ public class MagicShot : MonoBehaviour
 
 
 
-
+        
 
         if(spawn != null)
         {
+            
             vfx = Instantiate(spell, spawn.transform.position + transform.forward, Quaternion.identity);
+           
+         
             if(rotatetomouse != null)
             {
                 vfx.transform.localRotation = rotatetomouse.GetRotation();
             }
+           
+
         }
+
+       
       
 
   
@@ -194,7 +204,10 @@ public class MagicShot : MonoBehaviour
     }
 
 
-
+    private IEnumerator WaitBlast()
+    {
+        yield return new WaitForSeconds(1);
+    }
 
 
 }

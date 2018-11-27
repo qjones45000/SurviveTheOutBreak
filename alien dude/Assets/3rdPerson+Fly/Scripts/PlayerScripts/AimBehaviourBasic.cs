@@ -76,15 +76,37 @@ public class AimBehaviourBasic : GenericBehaviour
 		// Toggle camera aim position left or right, switching shoulders.
 		if (aim && Input.GetButtonDown (shoulderButton))
 		{
-			aimCamOffset.x = aimCamOffset.x * (-1);
-			aimPivotOffset.x = aimPivotOffset.x * (-1);
+            
+            
+                aimCamOffset.x = aimCamOffset.x * (-1);
+                aimPivotOffset.x = aimPivotOffset.x * (-1);
+         
+            
+			
+			
 		}
 
 		// Set aim boolean on the Animator Controller.
 		behaviourManager.GetAnim.SetBool (aimBool, aim);
+
+
         if (Input.GetKey("v"))
         {
             anim.SetBool("MagicShot", true);
+
+            if (aim && Input.GetKeyDown("a"))
+            {
+                aimCamOffset.x = aimCamOffset.x * (-1);
+                aimPivotOffset.x = aimPivotOffset.x * (-1);
+            }
+
+            if (aim && Input.GetKeyUp("a"))
+            {
+               
+                aimCamOffset.x = aimCamOffset.x * (-1);
+                aimPivotOffset.x = aimPivotOffset.x * (-1);
+
+            }
         }
         else
         {

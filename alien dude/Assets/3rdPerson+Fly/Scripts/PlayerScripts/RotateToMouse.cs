@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateToMouse : MonoBehaviour {
+public class RotateToMouse : MonoBehaviour{
 
     public Camera cam;
     public float MaxLength;
@@ -12,8 +12,13 @@ public class RotateToMouse : MonoBehaviour {
     private Vector3 direction;
     private Quaternion rotation;
 
-	// Use this for initialization
-	void Start () {
+    public Texture2D crosshair;
+
+    public Vector3 aimPivotOffset = new Vector3(0.5f, 1.2f, 0f);         // Offset to repoint the camera when aiming.
+  
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -51,4 +56,8 @@ public class RotateToMouse : MonoBehaviour {
     {
         return rotation;
     }
+
+
+   
+
 }

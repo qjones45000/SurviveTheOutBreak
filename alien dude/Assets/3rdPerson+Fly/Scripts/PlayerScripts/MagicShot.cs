@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicShot : MonoBehaviour
+public class MagicShot : GenericBehaviour
 {
 
     private Animator anim;
 
     public float speed;
 
-    public RotateToMouse rotatetomouse;
+  
 
    
 
     
 
-    public Transform spawn;
-    private GameObject spell;
-    public List<GameObject> vfx = new List<GameObject>();
 
 
+    
 
 
     private AnimatorStateInfo currentBaseState;
@@ -44,7 +42,7 @@ public class MagicShot : MonoBehaviour
         if (anim.layerCount == 4)
             anim.SetLayerWeight(1, 1);
 
-        spell = vfx[0];
+        
     }
 
     private void FixedUpdate()
@@ -123,7 +121,7 @@ public class MagicShot : MonoBehaviour
             if (Input.GetKeyUp("l"))
             {
                 anim.Play("strike");
-                spawnfx();
+              
 
             }
 
@@ -152,7 +150,7 @@ public class MagicShot : MonoBehaviour
             if (Input.GetKeyUp("l"))
             {
                 anim.Play("strike");
-                spawnfx();
+               
                 
             }
 
@@ -168,33 +166,12 @@ public class MagicShot : MonoBehaviour
 
     }
 
-    void spawnfx()
-    {
-        GameObject vfx;
+ 
 
 
 
-        
 
-        if(spawn != null)
-        {
-            
-            vfx = Instantiate(spell, spawn.transform.position + transform.forward, Quaternion.identity);
-           
-         
-            if(rotatetomouse != null)
-            {
-                vfx.transform.localRotation = rotatetomouse.GetRotation();
-            }
-           
 
-        }
-
-       
-      
-
-  
-     
 
 
 
@@ -204,13 +181,10 @@ public class MagicShot : MonoBehaviour
     }
 
 
-    private IEnumerator WaitBlast()
-    {
-        yield return new WaitForSeconds(1);
-    }
 
 
-}
+
+
 
 
 

@@ -11,6 +11,8 @@ public class RayCastSpell : MonoBehaviour {
 
     public GameObject SpellThing;
 
+    
+
 	// Use this for initialization
 
 
@@ -36,6 +38,8 @@ public class RayCastSpell : MonoBehaviour {
 
   void SpellTho()
     {
+        
+
         RaycastHit Hit; 
 
         if (Physics.Raycast (SpellCast.transform.position, SpellCast.transform.forward, out Hit, Range))

@@ -9,15 +9,23 @@ public class MagicShot : GenericBehaviour
 
     public float speed;
 
-  
-
-   
-
-    
+    public ParticleSystem ancienttxt;
 
 
 
-    
+    public float damage = 10f;
+    public float Range = 100f;
+
+    public Camera SpellCast;
+
+    public GameObject SpellThing;
+
+
+
+
+
+
+
 
 
     private AnimatorStateInfo currentBaseState;
@@ -61,6 +69,9 @@ public class MagicShot : GenericBehaviour
 
         if (currentBaseState.nameHash == idle || currentBaseState.nameHash == LocoMove)
         {
+
+            
+
             if (Input.GetKey("v"))
             {
                 anim.SetBool("MagicShot", true);
@@ -86,9 +97,11 @@ public class MagicShot : GenericBehaviour
             if (Input.GetKeyDown("j"))
             {
                 anim.SetBool("Standing Idle", true);
+                ancienttxt.Play();
 
             }
-            
+
+    
 
 
         }
@@ -104,25 +117,38 @@ public class MagicShot : GenericBehaviour
 
         if (currentBaseState.nameHash == MagicStance)
         {
+            
+
             if (Input.GetKeyDown("j"))
             {
                 anim.SetBool("Standing Idle", false);
+                ancienttxt.Stop();
             }
+
+            
+
 
             if (Input.GetKey("l"))
             {
                 anim.SetBool("MagicStrike", true);
+                
+
+              
             }
+
+          
+
             else
             {
                 anim.SetBool("MagicStrike", false);
+                
             }
 
             if (Input.GetKeyUp("l"))
             {
                 anim.Play("strike");
-              
 
+                SpellTho();
             }
 
             if (Input.GetKeyDown("m"))
@@ -150,8 +176,8 @@ public class MagicShot : GenericBehaviour
             if (Input.GetKeyUp("l"))
             {
                 anim.Play("strike");
-               
-                
+                SpellTho();
+
             }
 
             if (Input.GetKeyDown("m"))
@@ -166,19 +192,33 @@ public class MagicShot : GenericBehaviour
 
     }
 
- 
 
 
 
+    void SpellTho()
+    {
 
 
+        RaycastHit Hit;
 
+        if (Physics.Raycast(SpellCast.transform.position, SpellCast.transform.forward, out Hit, Range))
+        {
+            Debug.Log(Hit.transform.name);
 
-
-
+            Instantiate(SpellThing, Hit.point, Quaternion.LookRotation(Hit.normal));
+        }
 
 
     }
+
+
+
+
+
+
+
+
+}
 
 
 

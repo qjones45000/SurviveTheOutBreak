@@ -162,6 +162,8 @@ public class MagicShot : GenericBehaviour
             if (Input.GetKeyDown("j"))
             {
                 anim.Play("Idle");
+                anim.SetBool("Standing Idle", false);
+                ancienttxt.Stop();
             }
 
             if (Input.GetKey("l"))

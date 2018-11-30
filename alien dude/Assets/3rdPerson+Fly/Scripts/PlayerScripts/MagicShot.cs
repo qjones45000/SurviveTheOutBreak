@@ -10,7 +10,7 @@ public class MagicShot : GenericBehaviour
     public float speed;
 
     public ParticleSystem ancienttxt;
-
+    public ParticleSystem Flame;
 
 
     public float damage = 10f;
@@ -180,7 +180,13 @@ public class MagicShot : GenericBehaviour
 
         }
 
-       
+       if (MagicAimsCurrentState.nameHash == Aim)
+        {
+            if (Input.GetKey("v"))
+            {
+                Flame.Emit(1); 
+            }
+        }
 
 
     }

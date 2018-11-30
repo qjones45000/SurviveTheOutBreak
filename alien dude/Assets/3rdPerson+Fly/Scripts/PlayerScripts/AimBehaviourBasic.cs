@@ -15,7 +15,7 @@ public class AimBehaviourBasic : GenericBehaviour
     private int MagicBlastBool;
     private bool MagicShot;
 
-
+    public ParticleSystem Flame;
   
 
 
@@ -24,7 +24,7 @@ public class AimBehaviourBasic : GenericBehaviour
 
     static int MagicStance = Animator.StringToHash("Base Layer.Standing Idle");
     static int Aim = Animator.StringToHash("MagicAim.MagicShot");
-   
+    static int idle = Animator.StringToHash("Base Layer.Idle");
 
     // Start is always called after any Awake functions.
     void Start ()
@@ -50,16 +50,30 @@ public class AimBehaviourBasic : GenericBehaviour
 
 
         }
+
+   
+  
+   
+    
     }
 
     // Update is used to set features regardless the active behaviour.
     void Update ()
 	{
+
+        if (aim == true)
+        {
+            if (Input.GetKey("v"))
+            {
+                Flame.Emit(1);
+            }
+        }
+
 		// Activate/deactivate aim by input.
 		if (Input.GetAxisRaw(aimButton) != 0 && !aim)
 		{
 			StartCoroutine(ToggleAimOn());
-
+            
             
 
         }
@@ -129,7 +143,7 @@ public class AimBehaviourBasic : GenericBehaviour
 			yield return new WaitForSeconds(0.1f);
 			behaviourManager.GetAnim.SetFloat(speedFloat, 0);
             anim.SetBool("MagicShot", true);
-       
+      
             
                 
             

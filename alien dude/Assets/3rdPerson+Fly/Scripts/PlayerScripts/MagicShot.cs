@@ -72,16 +72,7 @@ public class MagicShot : GenericBehaviour
 
             
 
-            if (Input.GetKey("v"))
-            {
-                anim.SetBool("MagicShot", true);
-
-
-            }
-            else
-            {
-                anim.SetBool("MagicShot", false);
-            }
+ 
 
 
             if (Input.GetKeyDown("p"))
@@ -207,7 +198,8 @@ public class MagicShot : GenericBehaviour
         {
             Debug.Log(Hit.transform.name);
 
-            Instantiate(SpellThing, Hit.point, Quaternion.LookRotation(Hit.normal));
+         GameObject  blast = Instantiate(SpellThing, Hit.point, Quaternion.LookRotation(Hit.normal));
+            Destroy(blast, 2f);
         }
 
 

@@ -24,7 +24,7 @@ public class AimBehaviourBasic : GenericBehaviour
 
     static int MagicStance = Animator.StringToHash("Base Layer.Standing Idle");
     static int Aim = Animator.StringToHash("MagicAim.MagicShot");
-
+   
 
     // Start is always called after any Awake functions.
     void Start ()
@@ -59,14 +59,14 @@ public class AimBehaviourBasic : GenericBehaviour
 		if (Input.GetAxisRaw(aimButton) != 0 && !aim)
 		{
 			StartCoroutine(ToggleAimOn());
-          
+
             
 
         }
 		else if (aim && Input.GetAxisRaw(aimButton) == 0)
 		{
 			StartCoroutine(ToggleAimOff());
-           
+            
 
         }
 
@@ -90,9 +90,7 @@ public class AimBehaviourBasic : GenericBehaviour
 		behaviourManager.GetAnim.SetBool (aimBool, aim);
 
 
-        if (Input.GetKey("v"))
-        {
-            anim.SetBool("MagicShot", true);
+     
 
             if (aim && Input.GetKeyDown("a"))
             {
@@ -108,19 +106,18 @@ public class AimBehaviourBasic : GenericBehaviour
 
             }
         }
-        else
-        {
-            anim.SetBool("MagicShot", false);
-        }
-	}
+  
 
 	// Co-rountine to start aiming mode with delay.
 	private IEnumerator ToggleAimOn()
 	{
+        anim.SetBool("MagicShot", false);
 		yield return new WaitForSeconds(0.05f);
 		// Aiming is not possible.
 		if (behaviourManager.GetTempLockStatus(this.behaviourCode) || behaviourManager.IsOverriding(this))
 			yield return false;
+
+       
 
 		// Start aiming.
 		else
@@ -131,11 +128,11 @@ public class AimBehaviourBasic : GenericBehaviour
 			aimPivotOffset.x = Mathf.Abs(aimPivotOffset.x) * signal;
 			yield return new WaitForSeconds(0.1f);
 			behaviourManager.GetAnim.SetFloat(speedFloat, 0);
-
-            if (Input.GetKey("v"))
-            {
-                anim.SetBool("MagicShot", true);
-            }
+            anim.SetBool("MagicShot", true);
+       
+            
+                
+            
           
          
 			// This state overrides the active one.
@@ -144,6 +141,7 @@ public class AimBehaviourBasic : GenericBehaviour
 
            
 		}
+
 	}
 
 	// Co-rountine to end aiming mode with delay.
@@ -153,9 +151,11 @@ public class AimBehaviourBasic : GenericBehaviour
 		yield return new WaitForSeconds(0.3f);
 		behaviourManager.GetCamScript.ResetTargetOffsets();
 		behaviourManager.GetCamScript.ResetMaxVerticalAngle();
+        anim.SetBool("MagicShot", false);
 		yield return new WaitForSeconds(0.05f);
         
 		behaviourManager.RevokeOverridingBehaviour(this);
+       
 	}
 
 	// LocalFixedUpdate overrides the virtual function of the base class.

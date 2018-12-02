@@ -67,6 +67,8 @@ public class AimBehaviourBasic : GenericBehaviour
             {
                 Flame.Emit(1);
             }
+
+          
         }
 
 		// Activate/deactivate aim by input.

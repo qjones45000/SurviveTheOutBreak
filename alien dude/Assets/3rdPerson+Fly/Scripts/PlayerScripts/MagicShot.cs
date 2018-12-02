@@ -11,7 +11,8 @@ public class MagicShot : GenericBehaviour
 
     public ParticleSystem ancienttxt;
     public ParticleSystem Flame;
-
+    public ParticleSystem Blast;
+    public ParticleSystem ShieldEffect;
 
     public float damage = 10f;
     public float Range = 100f;
@@ -19,6 +20,9 @@ public class MagicShot : GenericBehaviour
     public Camera SpellCast;
 
     public GameObject SpellThing;
+
+    public GameObject MagicSign;
+    private ParticleSystem Sign;
 
 
 
@@ -32,6 +36,7 @@ public class MagicShot : GenericBehaviour
     private AnimatorStateInfo MagicAimsCurrentState;
     private AnimatorStateInfo LayerPunchState;
     private AnimatorStateInfo MagicStrikeCurrentState;
+    private AnimatorStateInfo ShieldState;
 
     static int idle = Animator.StringToHash("Base Layer.Idle");
     static int Aim = Animator.StringToHash("MagicAim.MagicShot");
@@ -41,6 +46,7 @@ public class MagicShot : GenericBehaviour
     static int MagicMove = Animator.StringToHash("Base Layer.magic movement");
     static int Strike = Animator.StringToHash("MagicStrikeCurrentState.magic strike");
     static int ActualStrike = Animator.StringToHash("MagicStrikeCurrentState.strike");
+    static int Shield = Animator.StringToHash("ShieldState.Shield");
 
     // Use this for initialization
     void Start()
@@ -65,12 +71,22 @@ public class MagicShot : GenericBehaviour
 
         if (anim.layerCount == 6)
             MagicStrikeCurrentState = anim.GetCurrentAnimatorStateInfo(3);
+        if (anim.layerCount == 8)
+            ShieldState = anim.GetCurrentAnimatorStateInfo(4);
 
 
         if (currentBaseState.nameHash == idle || currentBaseState.nameHash == LocoMove)
         {
-
-            
+            if (Input.GetKey("c"))
+            {
+                anim.SetBool("Shield", true);
+                ShieldEffect.Play();
+            }
+             if (Input.GetKeyUp("c"))
+            {
+                anim.SetBool("Shield", false);
+                ShieldEffect.Stop();
+            }
 
  
 
@@ -116,7 +132,17 @@ public class MagicShot : GenericBehaviour
                 ancienttxt.Stop();
             }
 
-            
+
+            if (Input.GetKey("c"))
+            {
+                anim.SetBool("Shield", true);
+            }
+            if (Input.GetKeyUp("c"))
+            {
+                anim.SetBool("Shield", false);
+            }
+
+
 
 
             if (Input.GetKey("l"))
@@ -145,6 +171,7 @@ public class MagicShot : GenericBehaviour
             if (Input.GetKeyDown("m"))
             {
                 anim.Play("AreaAttack");
+                Blast.Play();
             }
         }
 
@@ -175,18 +202,26 @@ public class MagicShot : GenericBehaviour
 
             if (Input.GetKeyDown("m"))
             {
+                
                 anim.Play("AreaAttack");
+
+                Blast.Play();
+              
             }
 
-        }
-
-       if (MagicAimsCurrentState.nameHash == Aim)
-        {
-            if (Input.GetKey("v"))
+            if (Input.GetKey("c"))
             {
-                Flame.Emit(1); 
+                anim.SetBool("Shield", true);
             }
+            if (Input.GetKeyUp("c"))
+            {
+                anim.SetBool("Shield", false);
+            }
+
+
+
         }
+
 
 
     }

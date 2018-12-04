@@ -1,0 +1,738 @@
+fileFormatVersion: 2
+guid: 95f7abc01cc09f74ba4a6ec0533a1237
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: alien body
+    100002: Bone001
+    100004: Bone002
+    100006: Bone003
+    100008: Bone004
+    100010: Bone005
+    100012: Bone006
+    100014: Bone007
+    100016: Bone008
+    100018: Bone009
+    100020: creature_head_bone
+    100022: creature_headnub_bone
+    100024: creature_l_arm_bone
+    100026: creature_l_clav_bone
+    100028: creature_l_foot_bone
+    100030: creature_l_forearm_bone
+    100032: creature_l_index2_bone
+    100034: creature_l_index3_bone
+    100036: creature_l_index3_bone 1
+    100038: creature_l_index3nub_bone
+    100040: creature_l_knee_bone
+    100042: creature_l_pointfinger1_bone
+    100044: creature_l_pointfinger1nub_bone
+    100046: creature_l_pointfinger2_bone
+    100048: creature_l_pointfinger3_bone
+    100050: creature_l_shin2_bone
+    100052: creature_l_shin_bone
+    100054: creature_l_shoulder_bone
+    100056: creature_l_thigh2_bone
+    100058: creature_l_thigh_bone
+    100060: creature_l_thumb1_bone
+    100062: creature_l_thumb1nub_bone
+    100064: creature_l_thumb2_bone
+    100066: creature_l_thumb3_bone
+    100068: creature_l_toe_bone
+    100070: creature_l_toenub_bone
+    100072: creature_l_winghead_bone
+    100074: creature_l_wingindex1_bone
+    100076: creature_l_wingindex2_bone
+    100078: creature_l_wingindex3_bone
+    100080: creature_l_wingindex3nub_bone
+    100082: creature_l_wrist_bone
+    100084: creature_neck_bone
+    100086: creature_pelvis_bone
+    100088: creature_pelvisnub_bone
+    100090: creature_r_arm_bone
+    100092: creature_r_clav_bone
+    100094: creature_r_forearm_bone
+    100096: creature_r_hand001_bone
+    100098: creature_r_handnub001_bone
+    100100: creature_r_index2__bone
+    100102: creature_r_index3__bone
+    100104: creature_r_index3__bone 1
+    100106: creature_r_index3nub__bone
+    100108: creature_r_l_foot_bone
+    100110: creature_r_l_knee_bone
+    100112: creature_r_l_shin2_bone
+    100114: creature_r_l_shin_bone
+    100116: creature_r_l_thigh2_bone
+    100118: creature_r_l_thigh_bone
+    100120: creature_r_l_toe_bone
+    100122: creature_r_pointfinger1__bone
+    100124: creature_r_pointfinger1nub__bone
+    100126: creature_r_pointfinger2__bone
+    100128: creature_r_pointfinger3__bone
+    100130: creature_r_shoulder_bone
+    100132: creature_r_thumb1__bone
+    100134: creature_r_thumb1nub__bone
+    100136: creature_r_thumb2__bone
+    100138: creature_r_thumb3__bone
+    100140: creature_r_winghead_bone
+    100142: creature_r_wingindex1_bone
+    100144: creature_r_wingindex2_bone
+    100146: creature_r_wingindex3_bone
+    100148: creature_r_wrist2_bone
+    100150: creature_r_wrist_bone
+    100152: creature_spine 1_bone
+    100154: creature_spine 2_bone
+    100156: creature_spine 3_bone
+    100158: creature_tonguemiddle2_bone
+    100160: creature_tonguemiddle_bone
+    100162: creature_tonguend_bone
+    100164: creature_tonguetip_bone
+    100166: creature_tonguetipnub_bone
+    100168: hand
+    100170: handnub
+    100172: IK Chain001
+    100174: IK Chain002
+    100176: IK Chain003
+    100178: IK Chain004
+    100180: //RootNode
+    400000: alien body
+    400002: Bone001
+    400004: Bone002
+    400006: Bone003
+    400008: Bone004
+    400010: Bone005
+    400012: Bone006
+    400014: Bone007
+    400016: Bone008
+    400018: Bone009
+    400020: creature_head_bone
+    400022: creature_headnub_bone
+    400024: creature_l_arm_bone
+    400026: creature_l_clav_bone
+    400028: creature_l_foot_bone
+    400030: creature_l_forearm_bone
+    400032: creature_l_index2_bone
+    400034: creature_l_index3_bone
+    400036: creature_l_index3_bone 1
+    400038: creature_l_index3nub_bone
+    400040: creature_l_knee_bone
+    400042: creature_l_pointfinger1_bone
+    400044: creature_l_pointfinger1nub_bone
+    400046: creature_l_pointfinger2_bone
+    400048: creature_l_pointfinger3_bone
+    400050: creature_l_shin2_bone
+    400052: creature_l_shin_bone
+    400054: creature_l_shoulder_bone
+    400056: creature_l_thigh2_bone
+    400058: creature_l_thigh_bone
+    400060: creature_l_thumb1_bone
+    400062: creature_l_thumb1nub_bone
+    400064: creature_l_thumb2_bone
+    400066: creature_l_thumb3_bone
+    400068: creature_l_toe_bone
+    400070: creature_l_toenub_bone
+    400072: creature_l_winghead_bone
+    400074: creature_l_wingindex1_bone
+    400076: creature_l_wingindex2_bone
+    400078: creature_l_wingindex3_bone
+    400080: creature_l_wingindex3nub_bone
+    400082: creature_l_wrist_bone
+    400084: creature_neck_bone
+    400086: creature_pelvis_bone
+    400088: creature_pelvisnub_bone
+    400090: creature_r_arm_bone
+    400092: creature_r_clav_bone
+    400094: creature_r_forearm_bone
+    400096: creature_r_hand001_bone
+    400098: creature_r_handnub001_bone
+    400100: creature_r_index2__bone
+    400102: creature_r_index3__bone
+    400104: creature_r_index3__bone 1
+    400106: creature_r_index3nub__bone
+    400108: creature_r_l_foot_bone
+    400110: creature_r_l_knee_bone
+    400112: creature_r_l_shin2_bone
+    400114: creature_r_l_shin_bone
+    400116: creature_r_l_thigh2_bone
+    400118: creature_r_l_thigh_bone
+    400120: creature_r_l_toe_bone
+    400122: creature_r_pointfinger1__bone
+    400124: creature_r_pointfinger1nub__bone
+    400126: creature_r_pointfinger2__bone
+    400128: creature_r_pointfinger3__bone
+    400130: creature_r_shoulder_bone
+    400132: creature_r_thumb1__bone
+    400134: creature_r_thumb1nub__bone
+    400136: creature_r_thumb2__bone
+    400138: creature_r_thumb3__bone
+    400140: creature_r_winghead_bone
+    400142: creature_r_wingindex1_bone
+    400144: creature_r_wingindex2_bone
+    400146: creature_r_wingindex3_bone
+    400148: creature_r_wrist2_bone
+    400150: creature_r_wrist_bone
+    400152: creature_spine 1_bone
+    400154: creature_spine 2_bone
+    400156: creature_spine 3_bone
+    400158: creature_tonguemiddle2_bone
+    400160: creature_tonguemiddle_bone
+    400162: creature_tonguend_bone
+    400164: creature_tonguetip_bone
+    400166: creature_tonguetipnub_bone
+    400168: hand
+    400170: handnub
+    400172: IK Chain001
+    400174: IK Chain002
+    400176: IK Chain003
+    400178: IK Chain004
+    400180: //RootNode
+    2100000: default
+    4300000: alien body
+    9500000: //RootNode
+    13700000: alien body
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton:
+    - name: rigged alien(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: alien body
+      parentName: rigged alien(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    - name: IK Chain001
+      parentName: rigged alien(Clone)
+      position: {x: 0.3747038, y: 0.41796088, z: -0.3482882}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    - name: IK Chain002
+      parentName: rigged alien(Clone)
+      position: {x: -0.3824657, y: 0.41832182, z: -0.34800735}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    - name: IK Chain003
+      parentName: rigged alien(Clone)
+      position: {x: -0.29254988, y: -0.0071933353, z: 0.50529397}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    - name: IK Chain004
+      parentName: rigged alien(Clone)
+      position: {x: 0.2934074, y: -0.0040418077, z: 0.50560457}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    - name: creature_pelvis_bone
+      parentName: rigged alien(Clone)
+      position: {x: -0.000000020659213, y: 2.586133, z: -0.099667005}
+      rotation: {x: 0.44088593, y: 0.5526767, z: 0.44104978, w: 0.55285007}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    - name: creature_r_l_thigh_bone
+      parentName: creature_pelvis_bone
+      position: {x: -0.089154966, y: 0.0025050736, z: 0.10904001}
+      rotation: {x: 0.024465498, y: 0.005270661, z: 0.999613, w: -0.012146927}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1}
+    - name: creature_r_l_knee_bone
+      parentName: creature_r_l_thigh_bone
+      position: {x: 0.3025931, y: -0.00000019073485, z: -0.000000085830685}
+      rotation: {x: 0.000015344622, y: -0.00004995886, z: 0.27534455, w: 0.9613456}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: creature_r_l_thigh2_bone
+      parentName: creature_r_l_knee_bone
+      position: {x: 0.13414048, y: 0.000000114440915, z: 0.00000025749205}
+      rotation: {x: -0.0000064376654, y: 0.00002664615, z: 0.3366819, w: 0.94161844}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: creature_r_l_shin_bone
+      parentName: creature_r_l_thigh2_bone
+      position: {x: 0.2270184, y: 0.00000034332274, z: -0.00000015258789}
+      rotation: {x: -0.0000035442113, y: -0.00000852186, z: -0.6094095, w: 0.7928556}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature_r_l_shin2_bone
+      parentName: creature_r_l_shin_bone
+      position: {x: 0.24048385, y: -0.00000027656554, z: 0.0000012493133}
+      rotation: {x: -0.0000019885251, y: -0.00007119189, z: -0.31343585, w: 0.9496094}
+      scale: {x: 0.9999998, y: 1.0000002, z: 0.9999999}
+    - name: Bone002
+      parentName: creature_r_l_shin2_bone
+      position: {x: 0.23265955, y: 0.0000008392334, z: -0.0000052547452}
+      rotation: {x: -0.062286273, y: -0.04924731, z: -0.47356755, w: 0.877171}
+      scale: {x: 1.0000005, y: 0.99999994, z: 1.0000005}
+    - name: creature_r_l_foot_bone
+      parentName: Bone002
+      position: {x: 0.000000028610229, y: -0.000000005960464, z: 0.000000009536743}
+      rotation: {x: 0.01797656, y: 0.1867288, z: 0.22864616, w: 0.95526445}
+      scale: {x: 0.99999917, y: 1, z: 0.99999976}
+    - name: creature_r_l_toe_bone
+      parentName: creature_r_l_foot_bone
+      position: {x: 0.1599394, y: 0.00000042557716, z: 0.0000009536743}
+      rotation: {x: 0.002713473, y: 0.0013536474, z: -0.03796786, w: 0.9992744}
+      scale: {x: 1, y: 0.99999976, z: 0.99999994}
+    - name: Bone001
+      parentName: creature_r_l_toe_bone
+      position: {x: 0.07797971, y: 0.000000038146972, z: -0.000000019073486}
+      rotation: {x: -0.000000010244549, y: 5.8208084e-11, z: -0.000000040978197, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1.0000001}
+    - name: Bone003
+      parentName: Bone002
+      position: {x: -0.13612266, y: 0.000000011920928, z: 0}
+      rotation: {x: 0.000000021141133, y: 0.06544466, z: -0.11494908, w: 0.99121326}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_pelvisnub_bone
+      parentName: creature_pelvis_bone
+      position: {x: -0.15215927, y: 0, z: -0.00000007707975}
+      rotation: {x: -0.00000023841173, y: 9.112711e-13, z: -0.000000007450581, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_spine 1_bone
+      parentName: creature_pelvis_bone
+      position: {x: -0.000000076293944, y: 0.000000019073486, z: 1.1641532e-12}
+      rotation: {x: 0.00000036997284, y: 0.0000015227619, z: 0.9991309, w: -0.041682716}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: creature_tonguend_bone
+      parentName: creature_spine 1_bone
+      position: {x: -0.012957611, y: -0.042983435, z: 0.000000076296274}
+      rotation: {x: 0.0000002428806, y: 0.00000021592813, z: 0.66439396, w: 0.7473825}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: creature_tonguemiddle_bone
+      parentName: creature_tonguend_bone
+      position: {x: -0.13596782, y: 0, z: -0.000000015667174}
+      rotation: {x: 0.015232907, y: -0.053399332, z: 0.2738975, w: 0.9601545}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_tonguemiddle2_bone
+      parentName: creature_tonguemiddle_bone
+      position: {x: -0.18385787, y: 0.000000076293944, z: 0}
+      rotation: {x: -0.0000000033304624, y: -0.000000009396218, z: -0.15209019, w: 0.9883666}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_tonguetip_bone
+      parentName: creature_tonguemiddle2_bone
+      position: {x: -0.095276184, y: 0, z: -0.0000000023841857}
+      rotation: {x: -0.0000000037013703, y: -0.000000023156149, z: -0.27436763, w: 0.96162486}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_tonguetipnub_bone
+      parentName: creature_tonguetip_bone
+      position: {x: -0.109210886, y: 0, z: 0.00000008106232}
+      rotation: {x: 0.00000014901163, y: 0.0000000046566218, z: 0.000000059604645,
+        w: 1}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1}
+    - name: creature_spine 2_bone
+      parentName: creature_spine 1_bone
+      position: {x: -0.10773262, y: 0.00000054359435, z: 0.000000010487856}
+      rotation: {x: -0.00000029240846, y: -0.00000016196938, z: -0.26749164, w: 0.9635602}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: creature_spine 3_bone
+      parentName: creature_spine 2_bone
+      position: {x: -0.11008545, y: 0.000000076293944, z: 0.0000000065914354}
+      rotation: {x: -0.000002017474, y: 0.0000012704894, z: 0.35723078, w: 0.93401617}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1}
+    - name: creature_neck_bone
+      parentName: creature_spine 3_bone
+      position: {x: -0.33982733, y: 0.000000095367426, z: 0.00000001567183}
+      rotation: {x: -0.00000014563072, y: -0.0000031416835, z: 0.41312057, w: 0.91067636}
+      scale: {x: 0.9999996, y: 0.9999996, z: 1}
+    - name: creature_head_bone
+      parentName: creature_neck_bone
+      position: {x: -0.102757566, y: 0.00000015258789, z: 0.00000015258556}
+      rotation: {x: -0.0000018438467, y: 0.000002675748, z: 0.049342893, w: 0.9987819}
+      scale: {x: 0.9999994, y: 1, z: 1}
+    - name: Bone006
+      parentName: creature_head_bone
+      position: {x: -0, y: 0, z: -2.3283064e-12}
+      rotation: {x: 0.0000011702058, y: -0.00000410146, z: 0.5321992, w: 0.8466192}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Bone007
+      parentName: Bone006
+      position: {x: -0.1830603, y: 0, z: -0.00000015258556}
+      rotation: {x: 0.00000005961465, y: 1.2717824e-11, z: -0.00000025331974, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_headnub_bone
+      parentName: creature_head_bone
+      position: {x: -0.24454819, y: 0.00000015258789, z: 0.00000014081364}
+      rotation: {x: -0.0000014308946, y: -0.000000020156437, z: -0.012889338, w: 0.999917}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: creature_l_winghead_bone
+      parentName: creature_head_bone
+      position: {x: -0.02478241, y: 0.050076596, z: -0.06519073}
+      rotation: {x: 0.9523129, y: 0.20381041, z: -0.21736053, w: 0.06569583}
+      scale: {x: -1.0000005, y: -0.9999997, z: -1}
+    - name: creature_l_wingindex1_bone
+      parentName: creature_l_winghead_bone
+      position: {x: -0.09380656, y: 0.00000015258789, z: 0.000000114440915}
+      rotation: {x: 0.28735977, y: -0.15209204, z: 0.17961636, w: 0.92845595}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: creature_l_wingindex2_bone
+      parentName: creature_l_wingindex1_bone
+      position: {x: -0.11977684, y: -0.0000011444091, z: -0.00000022888183}
+      rotation: {x: -0.23266643, y: 0.2533662, z: -0.17864585, w: 0.921823}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: creature_l_wingindex3_bone
+      parentName: creature_l_wingindex2_bone
+      position: {x: -0.099730164, y: 0.00000030517577, z: 0.00000022888183}
+      rotation: {x: 0.17042634, y: 0.21081652, z: -0.15150598, w: 0.9505563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_wingindex3nub_bone
+      parentName: creature_l_wingindex3_bone
+      position: {x: -0.054221112, y: -0.00000045776366, z: -0.0000009918213}
+      rotation: {x: 0.00000017881395, y: -0.0000005991897, z: 0.000000012805794, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: creature_r_winghead_bone
+      parentName: creature_head_bone
+      position: {x: -0.022445831, y: 0.051366117, z: 0.06519012}
+      rotation: {x: -0.21736635, y: -0.06570122, z: 0.9523113, w: -0.20381005}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000007}
+    - name: creature_r_wingindex1_bone
+      parentName: creature_r_winghead_bone
+      position: {x: -0.09380649, y: -0.00000015258789, z: -0.000000009536743}
+      rotation: {x: 0.28735977, y: 0.15209347, z: -0.17961629, w: 0.9284557}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: creature_r_wingindex2_bone
+      parentName: creature_r_wingindex1_bone
+      position: {x: -0.11977691, y: 0.00000045776366, z: -0.000000076293944}
+      rotation: {x: -0.23266694, y: -0.2533671, z: 0.17864557, w: 0.92182267}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: creature_r_wingindex3_bone
+      parentName: creature_r_wingindex2_bone
+      position: {x: -0.099730164, y: 0, z: 0.000000038146972}
+      rotation: {x: 0.17042631, y: -0.2108167, z: 0.15150575, w: 0.9505563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone009
+      parentName: creature_r_wingindex3_bone
+      position: {x: -0.054220922, y: 0, z: -0.00000015258789}
+      rotation: {x: 0.000000014901161, y: 0.0000000062864287, z: 0.000000025145713,
+        w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: creature_r_clav_bone
+      parentName: creature_spine 3_bone
+      position: {x: -0.22173332, y: -0.18158902, z: 0.056508787}
+      rotation: {x: 0.5861785, y: 0.2935691, z: 0.7271263, w: 0.20371415}
+      scale: {x: 0.99999994, y: 0.99999964, z: 0.99999976}
+    - name: creature_r_shoulder_bone
+      parentName: creature_r_clav_bone
+      position: {x: 0.20670444, y: 0.000000009536743, z: 0}
+      rotation: {x: -0.0476342, y: -0.13067482, z: 0.14166524, w: 0.9800949}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000002}
+    - name: creature_r_arm_bone
+      parentName: creature_r_shoulder_bone
+      position: {x: 0.13962622, y: -0.00000022411346, z: -0.00000015258789}
+      rotation: {x: -0.020664731, y: 0.13978483, z: 0.22642034, w: 0.9637256}
+      scale: {x: 1.0000002, y: 0.99999946, z: 0.9999996}
+    - name: creature_r_forearm_bone
+      parentName: creature_r_arm_bone
+      position: {x: 0.15454353, y: -0.0000002670288, z: -0.0000009155273}
+      rotation: {x: -0.0032953022, y: 0.046104427, z: 0.17898674, w: 0.98276514}
+      scale: {x: 1, y: 1.0000002, z: 0.9999997}
+    - name: creature_r_wrist_bone
+      parentName: creature_r_forearm_bone
+      position: {x: 0.22332436, y: -0.000000076293944, z: 0.0000010681152}
+      rotation: {x: 0.06159859, y: -0.33051473, z: 0.11419283, w: 0.9348399}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000002}
+    - name: creature_r_wrist2_bone
+      parentName: creature_r_wrist_bone
+      position: {x: 0.10008404, y: -0.00000015258789, z: -0.00000030517577}
+      rotation: {x: 0.000000037252892, y: -0.00000005960463, z: -0.000000040978183,
+        w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.99999994}
+    - name: creature_r_hand001_bone
+      parentName: creature_r_wrist2_bone
+      position: {x: 0.000026550293, y: 0.0012344361, z: 0.0005029297}
+      rotation: {x: -0.27012008, y: -0.15331991, z: -0.11300293, w: 0.94380003}
+      scale: {x: -0.9999999, y: -1.0000002, z: -1.0000005}
+    - name: creature_r_handnub001_bone
+      parentName: creature_r_hand001_bone
+      position: {x: -0.048337705, y: 0.000000009536743, z: 0}
+      rotation: {x: -0.0000000037252907, y: 1.387779e-17, z: -0.0000000037252903,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_r_pointfinger3__bone
+      parentName: creature_r_hand001_bone
+      position: {x: -0.06369007, y: -0.04206946, z: 0.010007324}
+      rotation: {x: 0.74722844, y: 0.05808834, z: 0.16562757, w: 0.64097035}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: creature_r_pointfinger2__bone
+      parentName: creature_r_pointfinger3__bone
+      position: {x: -0.063981205, y: 0, z: -0.000000038146972}
+      rotation: {x: 0.021545792, y: 0.033338565, z: 0.22429343, w: 0.9737129}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_r_pointfinger1__bone
+      parentName: creature_r_pointfinger2__bone
+      position: {x: -0.06871056, y: -0.000000076293944, z: 0.000000038146972}
+      rotation: {x: -0.041275814, y: -0.0104393205, z: 0.18441352, w: 0.98192614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_r_pointfinger1nub__bone
+      parentName: creature_r_pointfinger1__bone
+      position: {x: -0.051781006, y: -0.00000022888183, z: -0.000000038146972}
+      rotation: {x: -0.005388146, y: -0.013922735, z: -0.116446964, w: 0.9930847}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: creature_r_index3__bone
+      parentName: creature_r_hand001_bone
+      position: {x: -0.06452442, y: 0.033717193, z: 0.0025180052}
+      rotation: {x: 0.6971443, y: -0.13174906, z: 0.033181448, w: 0.7039396}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+    - name: creature_r_index2__bone
+      parentName: creature_r_index3__bone
+      position: {x: -0.06738868, y: 0, z: -0.000000015497207}
+      rotation: {x: -0.0014099116, y: 0.04888872, z: 0.13778022, w: 0.98925453}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_r_index3__bone 1
+      parentName: creature_r_index2__bone
+      position: {x: -0.047231063, y: 0.00000015258789, z: -0.0000000047683715}
+      rotation: {x: -0.025457619, y: 0.060064442, z: 0.08869336, w: 0.9939204}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_r_index3nub__bone
+      parentName: creature_r_index3__bone 1
+      position: {x: -0.04467735, y: 0, z: -0.00000047683716}
+      rotation: {x: 0.000000054016734, y: -0.00000012665987, z: 0.00000002980233,
+        w: 1}
+      scale: {x: 1, y: 0.9999997, z: 1.0000002}
+    - name: creature_r_thumb3__bone
+      parentName: creature_r_hand001_bone
+      position: {x: -0.014734077, y: -0.012779102, z: -0.01630371}
+      rotation: {x: 0.57792246, y: 0.5850169, z: 0.28841883, w: -0.4904849}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_r_thumb2__bone
+      parentName: creature_r_thumb3__bone
+      position: {x: -0.054117735, y: -0.000000038146972, z: -0.000000076293944}
+      rotation: {x: -0.04674481, y: 0.013848889, z: 0.27185607, w: 0.9611022}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_r_thumb1__bone
+      parentName: creature_r_thumb2__bone
+      position: {x: -0.06370971, y: 0, z: 0.000000076293944}
+      rotation: {x: -0.04700277, y: 0.0046569426, z: 0.3692302, w: 0.9281369}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_r_thumb1nub__bone
+      parentName: creature_r_thumb1__bone
+      position: {x: -0.066289864, y: 0.00000030517577, z: -0.000000076293944}
+      rotation: {x: -0.00000022351747, y: -0.000000029802408, z: 0.0000003427268,
+        w: 1}
+      scale: {x: 1.0000001, y: 0.9999995, z: 0.99999994}
+    - name: creature_l_clav_bone
+      parentName: creature_spine 3_bone
+      position: {x: -0.22173302, y: -0.18158859, z: -0.05651398}
+      rotation: {x: 0.2935727, y: -0.58618, z: -0.20371532, w: 0.7271233}
+      scale: {x: 1, y: 0.9999997, z: 0.9999998}
+    - name: creature_l_shoulder_bone
+      parentName: creature_l_clav_bone
+      position: {x: -0.20670459, y: -0.0000000667572, z: 0}
+      rotation: {x: -0.047633957, y: -0.13067494, z: 0.14166525, w: 0.98009497}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: creature_l_arm_bone
+      parentName: creature_l_shoulder_bone
+      position: {x: -0.13962598, y: 0.000000014305114, z: 0}
+      rotation: {x: -0.020664854, y: 0.13978541, z: 0.22642015, w: 0.96372557}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1}
+    - name: creature_l_forearm_bone
+      parentName: creature_l_arm_bone
+      position: {x: -0.1545433, y: 0, z: 0}
+      rotation: {x: -0.01319151, y: 0.044299852, z: 0.17944196, w: 0.9826821}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: creature_l_wrist_bone
+      parentName: creature_l_forearm_bone
+      position: {x: -0.22332427, y: -0.000000038146972, z: 0}
+      rotation: {x: 0.025063306, y: -0.039181, z: 0.1273535, w: 0.9907663}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Bone008
+      parentName: creature_l_wrist_bone
+      position: {x: -0.100115046, y: 0, z: 0.00000030517577}
+      rotation: {x: 0.57357645, y: 0.000000040131123, z: -0.000000007635283, w: 0.81915206}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: hand
+      parentName: Bone008
+      position: {x: -0.000000076293944, y: -0.00000061035155, z: 0.00000017166137}
+      rotation: {x: -0.7587451, y: -0.18995847, z: -0.0125967795, w: 0.62294704}
+      scale: {x: 1.0000006, y: 1.0000002, z: 0.99999976}
+    - name: handnub
+      parentName: hand
+      position: {x: -0.048337594, y: -0.000000019073486, z: 0}
+      rotation: {x: -0.000000014901161, y: -0.0000000037252903, z: 0.000000011175871,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_pointfinger3_bone
+      parentName: hand
+      position: {x: -0.06369003, y: -0.042069416, z: 0.010007171}
+      rotation: {x: 0.74722844, y: 0.058088362, z: 0.16562752, w: 0.64097035}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: creature_l_pointfinger2_bone
+      parentName: creature_l_pointfinger3_bone
+      position: {x: -0.06398129, y: 0, z: 0}
+      rotation: {x: 0.021545772, y: 0.033338517, z: 0.22429335, w: 0.9737129}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_pointfinger1_bone
+      parentName: creature_l_pointfinger2_bone
+      position: {x: -0.06871056, y: 0.00000015258789, z: -0.000000019073486}
+      rotation: {x: -0.041275874, y: -0.010439348, z: 0.18441354, w: 0.98192614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_pointfinger1nub_bone
+      parentName: creature_l_pointfinger1_bone
+      position: {x: -0.05178116, y: -0.00000030517577, z: -0.000000038146972}
+      rotation: {x: -0.0053881924, y: -0.0139227295, z: -0.11644698, w: 0.9930847}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: creature_l_thumb3_bone
+      parentName: hand
+      position: {x: -0.014734039, y: -0.01277914, z: -0.01630371}
+      rotation: {x: 0.5779225, y: 0.58501685, z: 0.2884189, w: -0.49048486}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_thumb2_bone
+      parentName: creature_l_thumb3_bone
+      position: {x: -0.054117814, y: -0.000000076293944, z: 0.000000076293944}
+      rotation: {x: -0.04674482, y: 0.013848945, z: 0.27185607, w: 0.9611022}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_thumb1_bone
+      parentName: creature_l_thumb2_bone
+      position: {x: -0.063709676, y: 0, z: 0}
+      rotation: {x: -0.04700279, y: 0.0046569477, z: 0.36923018, w: 0.92813694}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_thumb1nub_bone
+      parentName: creature_l_thumb1_bone
+      position: {x: -0.066289864, y: 0.00000015258789, z: 0.000000076293944}
+      rotation: {x: -0.00000019371514, y: 0.0000000074505198, z: 0.00000032037502,
+        w: 1}
+      scale: {x: 1.0000001, y: 0.9999995, z: 0.99999994}
+    - name: creature_l_index3_bone
+      parentName: hand
+      position: {x: -0.06452438, y: 0.033717193, z: 0.0025178527}
+      rotation: {x: 0.6971444, y: -0.1317491, z: 0.033181515, w: 0.7039396}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+    - name: creature_l_index2_bone
+      parentName: creature_l_index3_bone
+      position: {x: -0.06738872, y: -0.00000015258789, z: -0.000000057220458}
+      rotation: {x: -0.0014099302, y: 0.048888735, z: 0.1377802, w: 0.98925453}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_index3_bone 1
+      parentName: creature_l_index2_bone
+      position: {x: -0.047231063, y: 0, z: 0}
+      rotation: {x: -0.02545759, y: 0.060064454, z: 0.08869334, w: 0.9939204}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_index3nub_bone
+      parentName: creature_l_index3_bone 1
+      position: {x: -0.04467735, y: 0, z: -0.0000004196167}
+      rotation: {x: 0.00000005960466, y: -0.00000011920929, z: 0.000000014901168,
+        w: 1}
+      scale: {x: 1, y: 0.9999997, z: 1.0000002}
+    - name: creature_l_thigh_bone
+      parentName: creature_pelvis_bone
+      position: {x: -0.08915504, y: 0.002504387, z: -0.10904238}
+      rotation: {x: 0.01382617, y: -0.023308188, z: 0.0123072285, w: 0.99955696}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: creature_l_knee_bone
+      parentName: creature_l_thigh_bone
+      position: {x: -0.3025933, y: 0.00000036239624, z: -0.000000038146972}
+      rotation: {x: -0.000000524951, y: 0.00000009763447, z: 0.27537608, w: 0.96133655}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: creature_l_thigh2_bone
+      parentName: creature_l_knee_bone
+      position: {x: -0.13414063, y: -0.00000019073485, z: 0.000000019073486}
+      rotation: {x: -3.1358e-10, y: 8.769435e-10, z: 0.33670387, w: 0.94161063}
+      scale: {x: 0.99999976, y: 0.99999976, z: 1}
+    - name: creature_l_shin_bone
+      parentName: creature_l_thigh2_bone
+      position: {x: -0.22701843, y: 0.000000076293944, z: 0.000000047683713}
+      rotation: {x: -0.0000001532186, y: -0.00000019703656, z: -0.6094327, w: 0.7928378}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: creature_l_shin2_bone
+      parentName: creature_l_shin_bone
+      position: {x: -0.24048322, y: 0.000000057220458, z: 0.000000009536743}
+      rotation: {x: -0.0000006804722, y: 0.00024759435, z: -0.31419075, w: 0.9493599}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone004
+      parentName: creature_l_shin2_bone
+      position: {x: -0.23265977, y: 0.00020043134, z: -0.000042905805}
+      rotation: {x: -0.061776154, y: -0.049927443, z: -0.47291008, w: 0.87752324}
+      scale: {x: -1.0000006, y: -1.0000002, z: -1.0000001}
+    - name: creature_l_foot_bone
+      parentName: Bone004
+      position: {x: -0.00017175674, y: 0.00011217832, z: -0.0000110721585}
+      rotation: {x: 0.018532224, y: 0.17994547, z: 0.23301047, w: 0.95550114}
+      scale: {x: -0.99999964, y: -0.9999995, z: -0.99999994}
+    - name: creature_l_toe_bone
+      parentName: creature_l_foot_bone
+      position: {x: -0.1599389, y: 0.00000014305114, z: 0}
+      rotation: {x: 0.00044380207, y: 0.0016714263, z: -0.037957314, w: 0.9992779}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature_l_toenub_bone
+      parentName: creature_l_toe_bone
+      position: {x: -0.07798015, y: 0, z: 0.000000019073486}
+      rotation: {x: 0.0000000018626449, y: 0.000000026659105, z: -4.9656446e-17, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: Bone005
+      parentName: Bone004
+      position: {x: -0.13612266, y: 0.000000007152557, z: -0.000000009536743}
+      rotation: {x: 0.000000022496085, y: 0.065444656, z: -0.11494911, w: 0.99121326}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -66,6 +66,7 @@ public class AimBehaviourBasic : GenericBehaviour
             if (Input.GetKey("v"))
             {
                 Flame.Emit(1);
+                
             }
 
           

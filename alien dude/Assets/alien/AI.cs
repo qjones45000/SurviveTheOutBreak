@@ -29,7 +29,7 @@ public class AI : MonoBehaviour {
         float angle = Vector3.Angle(direction, this.transform.forward);
 
 
-        if (Vector3.Distance(Player.position, this.transform.position) < 20 && angle < 45)
+        if (Vector3.Distance(Player.position, this.transform.position) < 20 && angle < 90)
         {
             
       

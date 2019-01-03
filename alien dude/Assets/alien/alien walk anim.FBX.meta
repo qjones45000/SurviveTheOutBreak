@@ -183,7 +183,7 @@ ModelImporter:
     400174: IK Chain002
     400176: IK Chain003
     400178: IK Chain004
-    7400000: walk
+    7400000: Walk
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -214,7 +214,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: walk
+      name: Walk
       takeName: Take 001
       firstFrame: 0
       lastFrame: 35

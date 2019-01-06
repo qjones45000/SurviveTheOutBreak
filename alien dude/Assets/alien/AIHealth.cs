@@ -32,7 +32,7 @@ public class AIHealth : MonoBehaviour {
     {
         if (other.tag == "Collided")
         {
-            AiHealth.value -= 0.03f;
+            AiHealth.value -= 0.1f;
         }
     }
 

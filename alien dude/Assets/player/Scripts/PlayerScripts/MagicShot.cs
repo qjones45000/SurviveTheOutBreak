@@ -5,6 +5,7 @@ using UnityEngine;
 public class MagicShot : GenericBehaviour
 {
     public CapsuleCollider ArialBlast;
+    public CapsuleCollider ShieldBlock;
 
     private Animator anim;
 
@@ -57,7 +58,7 @@ public class MagicShot : GenericBehaviour
         if (anim.layerCount == 4)
             anim.SetLayerWeight(1, 1);
 
-        
+        ArialBlast.enabled = false;
     }
 
     private void FixedUpdate()
@@ -138,6 +139,8 @@ public class MagicShot : GenericBehaviour
             {
                 anim.SetBool("Shield", true);
                 ShieldEffect.Emit(1);
+
+                
             }
             if (Input.GetKeyUp("c"))
             {
@@ -173,9 +176,10 @@ public class MagicShot : GenericBehaviour
 
             if (Input.GetKeyDown("m"))
             {
+                StartCoroutine(WaitAtFirst());
                 anim.Play("AreaAttack");
                 Blast.Play();
-                StartCoroutine(WaitAtFirst());
+                
             }
         }
 
@@ -206,11 +210,11 @@ public class MagicShot : GenericBehaviour
 
             if (Input.GetKeyDown("m"))
             {
-                
+                StartCoroutine(WaitAtFirst());
                 anim.Play("AreaAttack");
 
                 Blast.Play();
-                StartCoroutine(WaitAtFirst());
+               
             }
 
             if (Input.GetKey("c"))

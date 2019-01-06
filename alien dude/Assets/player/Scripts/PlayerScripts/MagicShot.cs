@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MagicShot : GenericBehaviour
 {
+    public CapsuleCollider ArialBlast;
 
     private Animator anim;
 
@@ -174,6 +175,7 @@ public class MagicShot : GenericBehaviour
             {
                 anim.Play("AreaAttack");
                 Blast.Play();
+                StartCoroutine(WaitAtFirst());
             }
         }
 
@@ -208,7 +210,7 @@ public class MagicShot : GenericBehaviour
                 anim.Play("AreaAttack");
 
                 Blast.Play();
-              
+                StartCoroutine(WaitAtFirst());
             }
 
             if (Input.GetKey("c"))
@@ -252,7 +254,26 @@ public class MagicShot : GenericBehaviour
 
 
 
+    IEnumerator WaitAtFirst()
+    {
+        if (ArialBlast.enabled == false)
 
+        {
+            yield return new WaitForSeconds(1.8f);
+
+        }
+
+        ArialBlast.enabled = true;
+
+        if (ArialBlast.enabled == true)
+        {
+            yield return new WaitForSeconds(0.05f);
+
+        }
+
+        ArialBlast.enabled = false;
+
+    }
 
 
 

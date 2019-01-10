@@ -8,8 +8,9 @@ public class AIHealth : MonoBehaviour {
     public Slider AiHealth;
     public GameObject Alien;
 
-	// Use this for initialization
-	void Start () {
+  
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -18,15 +19,9 @@ public class AIHealth : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "AlienFuck")
-        {
-            AiHealth.value -= 1;
-            Debug.Log("hit");
-        }
-        
-    }
+    
+
+ 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -43,6 +38,11 @@ public class AIHealth : MonoBehaviour {
             AiHealth.value -= 0.01f;
             Debug.Log("particle hit");
 
+            if (AiHealth.value <= 0)
+            {
+                Destroy(Alien, 0.1f);
+            }
+         
         }
 
         if (other.tag == "BlastFucked")
@@ -53,14 +53,5 @@ public class AIHealth : MonoBehaviour {
         
     }
 
-    private void OnParticleTrigger()
-    {
-        if (tag == "BlastFucked")
-        {
-            AiHealth.value -= 30;
-            Debug.Log("Blast");
-        }
-
-       
-    }
+    
 }

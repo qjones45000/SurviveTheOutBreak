@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ public class MagicShot : GenericBehaviour
 {
     public CapsuleCollider ArialBlast;
     public CapsuleCollider ShieldBlock;
+    public Transform Ball;
+
+    public Slider AiHealth;
 
     private Animator anim;
 
@@ -53,6 +57,9 @@ public class MagicShot : GenericBehaviour
     // Use this for initialization
     void Start()
     {
+
+        
+
         anim = GetComponent<Animator>();
 
         if (anim.layerCount == 4)
@@ -247,10 +254,21 @@ public class MagicShot : GenericBehaviour
 
         if (Physics.Raycast(SpellCast.transform.position, SpellCast.transform.forward, out Hit, Range))
         {
+
+
             Debug.Log(Hit.transform.name);
 
          GameObject  blast = Instantiate(SpellThing, Hit.point, Quaternion.LookRotation(Hit.normal));
             Destroy(blast, 2f);
+
+            
+             var target = Hit.transform.GetComponent<AIHealth>();
+               
+            if (target != null)
+            {
+                AiHealth.value -= 0.01f;
+            }
+            
         }
 
 

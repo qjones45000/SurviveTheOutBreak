@@ -52,9 +52,9 @@ public class Health : MonoBehaviour {
 
         healthbar.value = calc_health();
 
-		//if (currenthealth <= 0) 
+		if (currenthealth <= 0) 
 		
-		//Die ();
+		Die ();
 
         
 		

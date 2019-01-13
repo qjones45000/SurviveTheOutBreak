@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 // AimBehaviour inherits from GenericBehaviour. This class corresponds to aim and strafe behaviour.
 public class AimBehaviourBasic : GenericBehaviour
@@ -16,8 +17,12 @@ public class AimBehaviourBasic : GenericBehaviour
     private bool MagicShot;
 
     public ParticleSystem Flame;
-    
 
+    private float BlastReload;
+    private const float BlastMax = -30f;
+
+   
+    
 
     private AnimatorStateInfo currentBaseState;
     private AnimatorStateInfo MagicAimsCurrentState;
@@ -33,6 +38,7 @@ public class AimBehaviourBasic : GenericBehaviour
 		aimBool = Animator.StringToHash("Aim");
         anim = GetComponent<Animator>();
         
+        
 
     }
 
@@ -47,7 +53,7 @@ public class AimBehaviourBasic : GenericBehaviour
             Rotating();
 
             
-
+           
 
         }
 
@@ -60,18 +66,45 @@ public class AimBehaviourBasic : GenericBehaviour
     // Update is used to set features regardless the active behaviour.
     void Update ()
 	{
+        var flame = GetComponent<MagicShot>();
+
+        
+
 
         if (aim == true)
         {
-            if (Input.GetKey("v"))
+
+         
+
+            if (Input.GetKey("v") && flame.BlastTime.value != 0)
             {
                 Flame.Emit(1);
-                
+
+                flame.BlastTime.value -= 0.01f;
+
+                Flame.maxParticles = 1000;
+            
             }
 
-          
-        }
+         if (flame.BlastTime.value <= 0 )
+            {
+             
+                Flame.maxParticles = 0;
+              
 
+            }
+            
+
+
+
+        }
+        if (flame.BlastTime.value == 0)
+        {
+            StartCoroutine(WaitFlameThing());
+         
+        }
+    
+     
 		// Activate/deactivate aim by input.
 		if (Input.GetAxisRaw(aimButton) != 0 && !aim)
 		{
@@ -123,10 +156,25 @@ public class AimBehaviourBasic : GenericBehaviour
 
             }
         }
-  
 
-	// Co-rountine to start aiming mode with delay.
-	private IEnumerator ToggleAimOn()
+   float Calculate()
+    {
+        return (BlastMax / BlastReload);
+    }
+
+    IEnumerator WaitFlameThing()
+    {
+         var flame = GetComponent<MagicShot>();
+
+       
+            yield return new WaitForSeconds(5);
+        flame.BlastTime.value = Calculate();
+        BlastReload -= Time.deltaTime;
+
+    }
+
+    // Co-rountine to start aiming mode with delay.
+    private IEnumerator ToggleAimOn()
 	{
         anim.SetBool("MagicShot", false);
 		yield return new WaitForSeconds(0.05f);

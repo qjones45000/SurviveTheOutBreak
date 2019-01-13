@@ -9,6 +9,9 @@ public class MagicShot : GenericBehaviour
     public CapsuleCollider ShieldBlock;
     public Transform Ball;
 
+
+    public Slider BlastTime;
+
     public Slider AiHealth;
 
     private Animator anim;
@@ -30,10 +33,11 @@ public class MagicShot : GenericBehaviour
     public GameObject MagicSign;
     private ParticleSystem Sign;
 
+    private float BlastCalc;
+    private const float BlastCalcLoad = 1f;
 
 
-
-
+    public Slider FlameTho;
 
 
 
@@ -43,6 +47,7 @@ public class MagicShot : GenericBehaviour
     private AnimatorStateInfo LayerPunchState;
     private AnimatorStateInfo MagicStrikeCurrentState;
     private AnimatorStateInfo ShieldState;
+    private AnimatorStateInfo React;
 
     static int idle = Animator.StringToHash("Base Layer.Idle");
     static int Aim = Animator.StringToHash("MagicAim.MagicShot");
@@ -53,6 +58,8 @@ public class MagicShot : GenericBehaviour
     static int Strike = Animator.StringToHash("MagicStrikeCurrentState.magic strike");
     static int ActualStrike = Animator.StringToHash("MagicStrikeCurrentState.strike");
     static int Shield = Animator.StringToHash("ShieldState.Shield");
+    static int Reaction = Animator.StringToHash("Base Layer.No Energy React");
+   
 
     // Use this for initialization
     void Start()
@@ -66,7 +73,12 @@ public class MagicShot : GenericBehaviour
             anim.SetLayerWeight(1, 1);
 
         ArialBlast.enabled = false;
+
+
+        
+
     }
+
 
     private void FixedUpdate()
     {
@@ -83,6 +95,7 @@ public class MagicShot : GenericBehaviour
         if (anim.layerCount == 8)
             ShieldState = anim.GetCurrentAnimatorStateInfo(4);
 
+        
 
         if (currentBaseState.nameHash == idle || currentBaseState.nameHash == LocoMove)
         {
@@ -181,14 +194,50 @@ public class MagicShot : GenericBehaviour
                 SpellTho();
             }
 
-            if (Input.GetKeyDown("m"))
+            
+            if (Input.GetKeyDown("m") && FlameTho.value != 0)
             {
                 StartCoroutine(WaitAtFirst());
                 anim.Play("AreaAttack");
                 Blast.Play();
+
+                FlameTho.value -= 0.09f;
+
+                Blast.maxParticles = 1;
+
                 
+
+
             }
+
+         
+
+            if (FlameTho.value == 0)
+            {
+                Blast.maxParticles = 0;
+            }
+
+            if ( FlameTho.value <= 0)
+            {
+              
+
+
+
+                ArialBlast.enabled = false;
+                
+                StartCoroutine(WaitBlastThing());
+
+              
+
+            }
+    
+
+
+
+
         }
+
+      
 
         if (currentBaseState.nameHash == MagicMove)
         {
@@ -243,8 +292,17 @@ public class MagicShot : GenericBehaviour
 
     }
 
+    float CalcBlast()
+    {
+        return ( BlastCalcLoad+BlastCalc );
+    }
 
-
+    IEnumerator WaitBlastThing()
+    {
+        yield return new WaitForSeconds(5);
+        FlameTho.value = CalcBlast();
+        BlastCalc -= Time.deltaTime;
+    }
 
     void SpellTho()
     {
@@ -297,8 +355,13 @@ public class MagicShot : GenericBehaviour
 
     }
 
+   
 
+    IEnumerator WaitForBlast()
+    {
+        yield return new WaitForSeconds(5f);
 
+    }
 
 }
 

@@ -8,6 +8,9 @@ public class TelePort : MonoBehaviour {
     public GameObject Player;
     public BoxCollider TeleTriggr;
 
+    public ParticleSystem TeleEffect;
+    public ParticleSystem TeleBlast;
+
     public GameObject boxInstan;
     public Transform BoxLoc;
 
@@ -23,8 +26,9 @@ public class TelePort : MonoBehaviour {
         {
             GameObject InstanThing;
             InstanThing = Instantiate(boxInstan, BoxLoc.transform.position, BoxLoc.transform.rotation);
-       
-            
+              TeleBlast.Play();
+            TeleEffect.Play();
+          
         }
 
     }

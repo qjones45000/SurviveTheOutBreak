@@ -82,15 +82,15 @@ public class BasicBehaviour : MonoBehaviour
     
         {
 
-            h = Input.GetAxis("Horizontal");
-            v = Input.GetAxis("Vertical");
+            h = Input.GetAxis("LeftJoystickHorizontal");
+            v = Input.GetAxis("LeftJoystickVertical");
 
             // Set the input axes on the Animator Controller.
             anim.SetFloat(hFloat, h, 0.1f, Time.deltaTime);
             anim.SetFloat(vFloat, v, 0.1f, Time.deltaTime);
 
             // Toggle sprint by input.
-            sprint = Input.GetButton(sprintButton);
+            sprint = Input.GetButton("R2");
 
             // Set the correct camera FOV for sprint mode.
             if (IsSprinting())

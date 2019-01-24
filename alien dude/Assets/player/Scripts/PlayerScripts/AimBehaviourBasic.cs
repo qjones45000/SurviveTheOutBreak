@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // AimBehaviour inherits from GenericBehaviour. This class corresponds to aim and strafe behaviour.
 public class AimBehaviourBasic : GenericBehaviour
 {
-	public string aimButton = "Aim", shoulderButton = "Aim Shoulder";     // Default aim and switch shoulders buttons.
+	public string aimButton = "L2", shoulderButton = "Aim Shoulder";     // Default aim and switch shoulders buttons.
 	public Texture2D crosshair;                                           // Crosshair texture.
 	public float aimTurnSmoothing = 0.15f;                                // Speed of turn response when aiming to match camera facing.
 	public Vector3 aimPivotOffset = new Vector3(0.5f, 1.2f,  0f);         // Offset to repoint the camera when aiming.
@@ -76,7 +76,7 @@ public class AimBehaviourBasic : GenericBehaviour
 
          
 
-            if (Input.GetKey("v") && flame.BlastTime.value != 0)
+            if (Input.GetButton("R2") && flame.BlastTime.value != 0)
             {
                 Flame.Emit(1);
 
@@ -106,14 +106,14 @@ public class AimBehaviourBasic : GenericBehaviour
     
      
 		// Activate/deactivate aim by input.
-		if (Input.GetAxisRaw(aimButton) != 0 && !aim)
+		if (Input.GetAxis("L2") != 0 && !aim)
 		{
 			StartCoroutine(ToggleAimOn());
             
             
 
         }
-		else if (aim && Input.GetAxisRaw(aimButton) == 0)
+		else if (aim && Input.GetAxis("L2") == 0)
 		{
 			StartCoroutine(ToggleAimOff());
             

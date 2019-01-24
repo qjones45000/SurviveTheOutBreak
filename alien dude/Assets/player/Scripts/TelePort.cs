@@ -22,7 +22,7 @@ public class TelePort : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown("t"))
+        if (Input.GetButtonDown("Circle"))
         {
             GameObject InstanThing;
             InstanThing = Instantiate(boxInstan, BoxLoc.transform.position, BoxLoc.transform.rotation);

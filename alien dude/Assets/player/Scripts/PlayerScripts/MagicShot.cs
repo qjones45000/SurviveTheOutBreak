@@ -123,7 +123,7 @@ public class MagicShot : GenericBehaviour
             }
 
 
-            if (Input.GetKeyDown("j"))
+            if (Input.GetButton("SquareButton"))
             {
                 anim.SetBool("Standing Idle", true);
                 ancienttxt.Play();
@@ -138,7 +138,7 @@ public class MagicShot : GenericBehaviour
 
         if (currentBaseState.nameHash == LocoMove)
         {
-            if (Input.GetKeyDown("j"))
+            if (Input.GetButton("SquareButton"))
             {
                 anim.Play("magic movement");
             }
@@ -148,7 +148,7 @@ public class MagicShot : GenericBehaviour
         {
             
 
-            if (Input.GetKeyDown("j"))
+            if (Input.GetButtonDown("SquareButton"))
             {
                 anim.SetBool("Standing Idle", false);
                 ancienttxt.Stop();
@@ -171,7 +171,7 @@ public class MagicShot : GenericBehaviour
 
 
 
-            if (Input.GetKey("l"))
+            if (Input.GetButton("R1"))
             {
                 anim.SetBool("MagicStrike", true);
                 
@@ -187,7 +187,7 @@ public class MagicShot : GenericBehaviour
                 
             }
 
-            if (Input.GetKeyUp("l"))
+            if (Input.GetButtonUp("R1"))
             {
                 anim.Play("strike");
 
@@ -195,7 +195,7 @@ public class MagicShot : GenericBehaviour
             }
 
             
-            if (Input.GetKeyDown("m") && FlameTho.value != 0)
+            if (Input.GetButtonDown("Triangle") && FlameTho.value != 0)
             {
                 StartCoroutine(WaitAtFirst());
                 anim.Play("AreaAttack");
@@ -241,14 +241,14 @@ public class MagicShot : GenericBehaviour
 
         if (currentBaseState.nameHash == MagicMove)
         {
-            if (Input.GetKeyDown("j"))
+            if (Input.GetButtonDown("SquareButton"))
             {
                 anim.Play("Idle");
                 anim.SetBool("Standing Idle", false);
                 ancienttxt.Stop();
             }
 
-            if (Input.GetKey("l"))
+            if (Input.GetButton("R1"))
             {
                 anim.SetBool("MagicStrike", true);
             }
@@ -257,14 +257,14 @@ public class MagicShot : GenericBehaviour
                 anim.SetBool("MagicStrike", false);
             }
 
-            if (Input.GetKeyUp("l"))
+            if (Input.GetButtonUp("R1"))
             {
                 anim.Play("strike");
                 SpellTho();
 
             }
 
-            if (Input.GetKeyDown("m"))
+            if (Input.GetButtonDown("Triangle"))
             {
                 StartCoroutine(WaitAtFirst());
                 anim.Play("AreaAttack");

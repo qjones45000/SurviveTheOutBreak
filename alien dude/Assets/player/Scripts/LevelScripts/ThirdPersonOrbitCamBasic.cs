@@ -3,7 +3,13 @@
 // This class corresponds to the 3rd person camera features.
 public class ThirdPersonOrbitCamBasic : MonoBehaviour 
 {
-	public Transform player;                                           // Player's reference.
+
+    private const float Y_ANGLE_MIN = 0.0f;
+    private const float Y_ANGLE_MAX = 50.0f;
+    private float Currentx = 0.0f;
+    private float Currenty = 0.0f;
+
+    public Transform player;                                           // Player's reference.
 	public Vector3 pivotOffset = new Vector3(0.0f, 1.0f,  0.0f);       // Offset to repoint the camera.
 	public Vector3 camOffset   = new Vector3(0.4f, 0.5f, -2.0f);       // Offset to relocate the camera related to the player position.
 	public float smooth = 10f;                                         // Speed of camera responsiveness.
@@ -92,7 +98,12 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 		smoothCamOffset = Vector3.Lerp(smoothCamOffset, noCollisionOffset, smooth * Time.deltaTime);
 
 		cam.position =  player.position + camYRotation * smoothPivotOffset + aimRotation * smoothCamOffset;
-	}
+
+        Currentx += Input.GetAxis("Mouse X");
+        Currenty += Input.GetAxis("Mouse Y");
+
+        Currenty = Mathf.Clamp(Currenty, Y_ANGLE_MIN, Y_ANGLE_MAX);
+    }
 
 	// Set camera offsets to custom values.
 	public void SetTargetOffsets(Vector3 newPivotOffset, Vector3 newCamOffset)

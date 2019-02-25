@@ -5,7 +5,8 @@ public class AnimTriggers : MonoBehaviour
 {	
 	// Create a reference to the animator component
 	private Animator animator;
-	
+	 
+    
 	
 	void Start ()
 	{

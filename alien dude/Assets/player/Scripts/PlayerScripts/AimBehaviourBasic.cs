@@ -109,8 +109,10 @@ public class AimBehaviourBasic : GenericBehaviour
 		if (Input.GetAxis("L2") != 0 && !aim)
 		{
 			StartCoroutine(ToggleAimOn());
+            var CameraClamp = GetComponent<ThirdPersonOrbitCamBasic>();
+
             
-            
+
 
         }
 		else if (aim && Input.GetAxis("L2") == 0)

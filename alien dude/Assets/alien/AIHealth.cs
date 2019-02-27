@@ -8,28 +8,71 @@ public class AIHealth : MonoBehaviour {
     public Slider AiHealth;
     public GameObject Alien;
 
-  
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    
+    void Start()
+    {
+        RigidBodyState(true);
+        Colliderstate(false);
+    }
 
+    private void FixedUpdate()
+    {
+        if (AiHealth.value == 0)
+        {
+            GetComponent<Animator>().enabled = false;
+            RigidBodyState(false);
+            Colliderstate(true);
+        }
+      
+
+
+        
+    }
+
+   
  
 
-    private void OnTriggerEnter(Collider other)
+    //Ragdoll
+
+        void RigidBodyState (bool state)
     {
-        if (other.tag == "Collided")
+        Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+
+        foreach (Rigidbody rigidBody in rigidbodies)
         {
-            AiHealth.value -= 0.1f;
+            rigidBody.isKinematic = state;
+        }
+
+        GetComponent<Rigidbody>().isKinematic = !state;
+    }
+
+    void Colliderstate (bool state)
+    {
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+
+        foreach (Collider Collider in colliders)
+        {
+            Collider.enabled = state;
+        }
+
+        GetComponent<Collider>().enabled = !state;
+
+    }
+    //
+
+
+   // enemy Damage
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "ParticleFuck")
+        {
+            AiHealth.value -= 1f;
+            Debug.Log("particle hit");
+
+          
         }
     }
+
 
     private void OnParticleCollision(GameObject other)
     {
@@ -38,10 +81,7 @@ public class AIHealth : MonoBehaviour {
             AiHealth.value -= 0.01f;
             Debug.Log("particle hit");
 
-            if (AiHealth.value <= 0)
-            {
-                Destroy(Alien, 0.1f);
-            }
+          
          
         }
 
@@ -52,6 +92,6 @@ public class AIHealth : MonoBehaviour {
         }
         
     }
-
+    //
     
 }

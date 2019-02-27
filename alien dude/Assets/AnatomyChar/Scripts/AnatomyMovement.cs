@@ -50,8 +50,8 @@ public class AnatomyMovement : MonoBehaviour {
 
     void PlayerMoveRotation()
     {
-        inputX = Input.GetAxis("Horizontal");
-        inputZ = Input.GetAxis("Vertical");
+        inputX = Input.GetAxis("LeftJoystickHorizontal");
+        inputZ = Input.GetAxis("LeftJoystickVertical");
 
         var forward = cam.transform.forward;
         var right = cam.transform.right;
@@ -75,8 +75,8 @@ public class AnatomyMovement : MonoBehaviour {
     void InputMagnitude()
     {
         // calculates input vector
-        inputX = Input.GetAxis("Horizontal");
-        inputZ = Input.GetAxis("Vertical");
+        inputX = Input.GetAxis("LeftJoystickHorizontal");
+        inputZ = Input.GetAxis("LeftJoystickVertical");
 
         anim.SetFloat("inputZ", inputZ, 0.0f, Time.deltaTime * 2);
         anim.SetFloat("inputX", inputX, 0.0f, Time.deltaTime * 2);

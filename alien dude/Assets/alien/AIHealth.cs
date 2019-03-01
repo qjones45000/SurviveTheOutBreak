@@ -7,6 +7,8 @@ public class AIHealth : MonoBehaviour {
 
     public Slider AiHealth;
     public GameObject Alien;
+    public Collider Damager;
+
 
 
     void Start()
@@ -44,6 +46,7 @@ public class AIHealth : MonoBehaviour {
         }
 
         GetComponent<Rigidbody>().isKinematic = !state;
+        
     }
 
     void Colliderstate (bool state)
@@ -56,6 +59,7 @@ public class AIHealth : MonoBehaviour {
         }
 
         GetComponent<Collider>().enabled = !state;
+        Damager.enabled = true;
 
     }
     //
@@ -66,7 +70,7 @@ public class AIHealth : MonoBehaviour {
     {
         if (collision.gameObject.tag == "ParticleFuck")
         {
-            AiHealth.value -= 1f;
+            AiHealth.value -= 0.02f;
             Debug.Log("particle hit");
 
           

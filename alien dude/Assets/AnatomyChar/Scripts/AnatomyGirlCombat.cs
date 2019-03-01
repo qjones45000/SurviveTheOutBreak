@@ -32,10 +32,15 @@ public class AnatomyGirlCombat : MonoBehaviour {
 
     void AnatomyCombat()
     {
-        if (Input.GetButton("SquareButton"))
+
+       var Dash =  GetComponent<AnatomyMovement>();
+
+        
+
+        if ( Input.GetButton("SquareButton"))
         {
             anim.SetBool("Combo1", true);
-
+        
 
         }
         else
@@ -71,4 +76,6 @@ public class AnatomyGirlCombat : MonoBehaviour {
             anim.SetBool("Combo4", false);
         }
     }
+
+
 }

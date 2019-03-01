@@ -26,10 +26,6 @@ public class EnemyRagdoll : MonoBehaviour {
 
     }
 
-    private void FixedUpdate()
-    {
-        DoRagdoll(false);
-    }
 
     // Use this for initialization
     void Start () {

@@ -17,6 +17,7 @@ public class AnatomyMovement : MonoBehaviour {
     public bool isGrounded;
     private float verticalVel;
     private Vector3 moveVector;
+    public float Dash = 0.01f;
 
 	// Use this for initialization
 	void Start ()
@@ -48,6 +49,8 @@ public class AnatomyMovement : MonoBehaviour {
 
 	}
 
+
+
     void PlayerMoveRotation()
     {
         inputX = Input.GetAxis("LeftJoystickHorizontal");
@@ -69,6 +72,16 @@ public class AnatomyMovement : MonoBehaviour {
         if (blockRotationPlayer == false)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), desiredRotationSpeed);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetButtonDown("SquareButton"))
+        {
+            this.transform.position += desiredMoveDirection * 0.50f;
+        
+
         }
     }
 

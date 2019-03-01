@@ -38,7 +38,7 @@ public class AI : MonoBehaviour {
 
             AlienAnim.SetBool("Idle", false);
 
-            if (direction.magnitude < 15)
+            if (direction.magnitude < 15 && direction.magnitude > 0.96f)
             {
                 
                 this.transform.Translate(0, 0, 0.1f);
@@ -48,14 +48,15 @@ public class AI : MonoBehaviour {
 
             }
 
-             if (direction.magnitude < 5)
+             if (direction.magnitude <= 0.96f)
             {
 
-             
+                this.transform.Translate(0, 0, 0);
 
                 AlienAnim.SetBool("Attacking", true);
                 AlienAnim.SetBool("Walking", false);
-               
+
+                
 
             }
         }
@@ -70,4 +71,12 @@ public class AI : MonoBehaviour {
         
 		
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "PaticleFuck")
+        {
+            
+        }
+    }
 }

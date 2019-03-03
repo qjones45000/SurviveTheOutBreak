@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnatomyMovement : MonoBehaviour {
 
+    private float min = 0;
+    private float max = 50;
     public float inputX;
     public float inputZ;
     public Vector3 desiredMoveDirection;
@@ -19,6 +21,8 @@ public class AnatomyMovement : MonoBehaviour {
     private Vector3 moveVector;
     public float Dash = 0.01f;
 
+  
+
 	// Use this for initialization
 	void Start ()
     {
@@ -26,9 +30,9 @@ public class AnatomyMovement : MonoBehaviour {
         cam = Camera.main;
         controller = this.GetComponent<CharacterController>();
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         InputMagnitude();
 
@@ -47,8 +51,8 @@ public class AnatomyMovement : MonoBehaviour {
         moveVector = new Vector3(0, verticalVel, 0);
         controller.Move(moveVector);
 
-	}
-
+     
+    }
 
 
     void PlayerMoveRotation()
@@ -77,12 +81,7 @@ public class AnatomyMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (Input.GetButtonDown("SquareButton"))
-        {
-            this.transform.position += desiredMoveDirection * 0.50f;
-        
-
-        }
+     
     }
 
     void InputMagnitude()
@@ -110,4 +109,6 @@ public class AnatomyMovement : MonoBehaviour {
         }
     }
    
+   
+
 }

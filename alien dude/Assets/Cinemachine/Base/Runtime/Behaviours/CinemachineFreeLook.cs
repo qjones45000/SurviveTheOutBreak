@@ -5,6 +5,8 @@ using System;
 
 namespace Cinemachine
 {
+
+  
     /// <summary>
     /// A Cinemachine Camera geared towards a 3rd person camera experience.
     /// The camera orbits around its subject with three separate camera rigs defining

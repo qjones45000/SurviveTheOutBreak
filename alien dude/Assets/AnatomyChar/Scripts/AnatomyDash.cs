@@ -40,6 +40,10 @@ public class AnatomyDash : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Player.transform.position = TeleportTarget.transform.position;
+        if (other.gameObject.tag == "Dash")
+        {
+            Player.transform.position = TeleportTarget.transform.position;
+        }
+      
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10bf26fb0a02d7348aab8a4c8c0fa285
+guid: 21ef963dbcab15c4998aa1d881ec567c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -83,17 +83,19 @@ ModelImporter:
     100154: neckLigamentleft_low
     100156: neckLigamentright_low
     100158: neckMuscle_low
-    100160: rightClav_low
-    100162: rightEye_low
-    100164: skinBack_low
-    100166: skinFoot_low
-    100168: skinHip_low
-    100170: skinLeftarm_low
-    100172: skinRightarm_low
-    100174: skinThigh_low
-    100176: skinTorso_low
-    100178: throatMuscleleft_low
-    100180: throatMuscleright_low
+    100160: PANTS_LOW
+    100162: rightClav_low
+    100164: rightEye_low
+    100166: SHIRT_LOW
+    100168: skinBack_low
+    100170: skinFoot_low
+    100172: skinHip_low
+    100174: skinLeftarm_low
+    100176: skinRightarm_low
+    100178: skinThigh_low
+    100180: skinTorso_low
+    100182: throatMuscleleft_low
+    100184: throatMuscleright_low
     400000: arm_low
     400002: Body_low
     400004: footBone_low
@@ -174,43 +176,47 @@ ModelImporter:
     400154: neckLigamentleft_low
     400156: neckLigamentright_low
     400158: neckMuscle_low
-    400160: rightClav_low
-    400162: rightEye_low
-    400164: skinBack_low
-    400166: skinFoot_low
-    400168: skinHip_low
-    400170: skinLeftarm_low
-    400172: skinRightarm_low
-    400174: skinThigh_low
-    400176: skinTorso_low
-    400178: throatMuscleleft_low
-    400180: throatMuscleright_low
+    400160: PANTS_LOW
+    400162: rightClav_low
+    400164: rightEye_low
+    400166: SHIRT_LOW
+    400168: skinBack_low
+    400170: skinFoot_low
+    400172: skinHip_low
+    400174: skinLeftarm_low
+    400176: skinRightarm_low
+    400178: skinThigh_low
+    400180: skinTorso_low
+    400182: throatMuscleleft_low
+    400184: throatMuscleright_low
     2100000: No Name
-    4300000: Body_low
-    4300002: arm_low
-    4300004: handBone_low
-    4300006: footBone_low
-    4300008: handVein_low
-    4300010: rightClav_low
-    4300012: leftClav_low
-    4300014: neckMuscle_low
-    4300016: throatMuscleleft_low
-    4300018: throatMuscleright_low
-    4300020: neckLigamentright_low
-    4300022: neckLigamentleft_low
-    4300024: head_low
-    4300026: legVeinleft_low
-    4300028: LeftLegVein2_low
-    4300030: rightEye_low
-    4300032: lefttEye_low
-    4300034: handVein2_low
-    4300036: skinTorso_low
-    4300038: skinHip_low
-    4300040: skinThigh_low
-    4300042: skinRightarm_low
-    4300044: skinLeftarm_low
-    4300046: skinFoot_low
-    4300048: skinBack_low
+    4300000: arm_low
+    4300002: handBone_low
+    4300004: footBone_low
+    4300006: handVein_low
+    4300008: rightClav_low
+    4300010: leftClav_low
+    4300012: neckMuscle_low
+    4300014: throatMuscleleft_low
+    4300016: throatMuscleright_low
+    4300018: neckLigamentright_low
+    4300020: neckLigamentleft_low
+    4300022: head_low
+    4300024: legVeinleft_low
+    4300026: LeftLegVein2_low
+    4300028: rightEye_low
+    4300030: lefttEye_low
+    4300032: handVein2_low
+    4300034: skinTorso_low
+    4300036: skinHip_low
+    4300038: skinThigh_low
+    4300040: skinRightarm_low
+    4300042: skinLeftarm_low
+    4300044: skinFoot_low
+    4300046: skinBack_low
+    4300048: SHIRT_LOW
+    4300050: PANTS_LOW
+    4300052: Body_low
     7400000: mixamo.com
     9500000: //RootNode
     13700000: arm_low
@@ -227,17 +233,19 @@ ModelImporter:
     13700022: neckLigamentleft_low
     13700024: neckLigamentright_low
     13700026: neckMuscle_low
-    13700028: rightClav_low
-    13700030: rightEye_low
-    13700032: skinBack_low
-    13700034: skinFoot_low
-    13700036: skinHip_low
-    13700038: skinLeftarm_low
-    13700040: skinRightarm_low
-    13700042: skinThigh_low
-    13700044: skinTorso_low
-    13700046: throatMuscleleft_low
-    13700048: throatMuscleright_low
+    13700028: PANTS_LOW
+    13700030: rightClav_low
+    13700032: rightEye_low
+    13700034: SHIRT_LOW
+    13700036: skinBack_low
+    13700038: skinFoot_low
+    13700040: skinHip_low
+    13700042: skinLeftarm_low
+    13700044: skinRightarm_low
+    13700046: skinThigh_low
+    13700048: skinTorso_low
+    13700050: throatMuscleleft_low
+    13700052: throatMuscleright_low
   externalObjects: {}
   materials:
     importMaterials: 1

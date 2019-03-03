@@ -38,8 +38,8 @@ public class thirdpersoncam : MonoBehaviour {
     void Update ()
     {
 
-        Currentx += Input.GetAxis("Mouse X");
-        Currenty += Input.GetAxis("Mouse Y");
+        Currentx += Input.GetAxis("LeftJoystickHorizontal");
+        Currenty += Input.GetAxis("LeftJoystickVertical");
 
         Currenty = Mathf.Clamp(Currenty,Y_ANGLE_MIN, Y_ANGLE_MAX);
 	}

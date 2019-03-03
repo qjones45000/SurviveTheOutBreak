@@ -9,11 +9,14 @@ public class AnatomyGirlCombat : MonoBehaviour {
     
 
     private AnimatorStateInfo currentBaseState;
+    private AnimatorStateInfo UnsheathState;
 
-    static int punch1 = Animator.StringToHash("Base Layer.punch1");
-    static int punch2 = Animator.StringToHash("Base Layer.punch2");
-    static int punch3 = Animator.StringToHash("Base Layer.punch3");
-    static int uppercut = Animator.StringToHash("Base Layer.uppercut");
+    static int Move = Animator.StringToHash("Base Layer.Locomotion");
+    static int unsheath = Animator.StringToHash("unsheath.unsheath");
+    static int Swing1 = Animator.StringToHash("unsheath.Swing1");
+    static int Swing2 = Animator.StringToHash("unsheath.Swing2");
+    static int Combat = Animator.StringToHash("unsheath.Combat");
+    static int Fight = Animator.StringToHash("unsheath.Fight");
 
     // Use this for initialization
     void Start ()
@@ -25,9 +28,14 @@ public class AnatomyGirlCombat : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+
         AnatomyCombat();
 
         currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
+        UnsheathState = anim.GetCurrentAnimatorStateInfo(1);
+
+  
+       
     }
 
     void AnatomyCombat()
@@ -35,9 +43,11 @@ public class AnatomyGirlCombat : MonoBehaviour {
 
        var Dash =  GetComponent<AnatomyMovement>();
 
-        
+     
+    
+    
 
-        if ( Input.GetButton("SquareButton"))
+        if ( UnsheathState.nameHash == Fight && Input.GetButton("SquareButton"))
         {
             anim.SetBool("Combo1", true);
         
@@ -48,7 +58,7 @@ public class AnatomyGirlCombat : MonoBehaviour {
             anim.SetBool("Combo1", false);
         }
 
-        if (currentBaseState.nameHash == punch1 && Input.GetButton("SquareButton"))
+        if (UnsheathState.nameHash == Swing1 && Input.GetButton("SquareButton"))
         {
             anim.SetBool("Combo2", true);
             anim.SetBool("Combo1", false);
@@ -57,7 +67,8 @@ public class AnatomyGirlCombat : MonoBehaviour {
         {
             anim.SetBool("Combo2", false);
         }
-        if (currentBaseState.nameHash == punch2 && Input.GetButton("SquareButton"))
+
+        if (UnsheathState.nameHash == Swing2 && Input.GetButton("SquareButton"))
         {
             anim.SetBool("Combo3", true);
             anim.SetBool("Combo2", false);
@@ -66,15 +77,8 @@ public class AnatomyGirlCombat : MonoBehaviour {
         {
             anim.SetBool("Combo3", false);
         }
-        if (currentBaseState.nameHash == punch3 && Input.GetButton("SquareButton"))
-        {
-            anim.SetBool("Combo4", true);
-            anim.SetBool("Combo3", false);
-        }
-        else
-        {
-            anim.SetBool("Combo4", false);
-        }
+
+
     }
 
 

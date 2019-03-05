@@ -70,7 +70,7 @@ public class AIHealth : MonoBehaviour {
     {
         if (collision.gameObject.tag == "ParticleFuck")
         {
-            AiHealth.value -= 0.02f;
+            AiHealth.value -= 0.10f;
             Debug.Log("particle hit");
 
           

@@ -6,8 +6,8 @@ using UnityEngine;
 public class AIHealth : MonoBehaviour {
 
     public Slider AiHealth;
-    public GameObject Alien;
-    public Collider Damager;
+    public GameObject Creature;
+    public Collider[] Damager;
 
 
 
@@ -59,7 +59,12 @@ public class AIHealth : MonoBehaviour {
         }
 
         GetComponent<Collider>().enabled = !state;
-        Damager.enabled = true;
+
+        foreach (Collider Damager in Damager)
+        {
+            Damager.enabled = true;
+        }
+        
 
     }
     //

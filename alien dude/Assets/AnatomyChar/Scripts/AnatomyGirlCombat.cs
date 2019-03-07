@@ -5,7 +5,9 @@ using UnityEngine;
 public class AnatomyGirlCombat : MonoBehaviour {
 
     private Animator anim;
+    public Collider WeaponCol;
 
+    public bool Hit;
     
 
     private AnimatorStateInfo currentBaseState;
@@ -22,6 +24,7 @@ public class AnatomyGirlCombat : MonoBehaviour {
     void Start ()
     {
         anim = this.GetComponent<Animator>();
+        WeaponCol.enabled = false;
         
 	}
 	
@@ -34,7 +37,14 @@ public class AnatomyGirlCombat : MonoBehaviour {
         currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
         UnsheathState = anim.GetCurrentAnimatorStateInfo(1);
 
-  
+        if (Hit == true)
+        {
+            WeaponCol.enabled = true;
+        }
+        else
+        {
+            WeaponCol.enabled = false;
+        }
        
     }
 
@@ -49,37 +59,52 @@ public class AnatomyGirlCombat : MonoBehaviour {
 
         if ( UnsheathState.nameHash == Fight && Input.GetButton("SquareButton"))
         {
+           
             anim.SetBool("Combo1", true);
-        
+            
 
         }
         else
         {
+           
             anim.SetBool("Combo1", false);
         }
 
         if (UnsheathState.nameHash == Swing1 && Input.GetButton("SquareButton"))
         {
+           
             anim.SetBool("Combo2", true);
             anim.SetBool("Combo1", false);
         }
         else
         {
+           
             anim.SetBool("Combo2", false);
         }
 
         if (UnsheathState.nameHash == Swing2 && Input.GetButton("SquareButton"))
         {
+           
             anim.SetBool("Combo3", true);
             anim.SetBool("Combo2", false);
         }
         else
         {
+            
             anim.SetBool("Combo3", false);
         }
 
 
     }
 
+    void WeaponHit()
+    {
+        Hit = true;
+    }
+
+    void Weapon_Not_Hit()
+    {
+        Hit = false;
+    }
 
 }

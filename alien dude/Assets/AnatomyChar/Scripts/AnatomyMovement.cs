@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnatomyMovement : MonoBehaviour {
 
@@ -20,11 +21,12 @@ public class AnatomyMovement : MonoBehaviour {
     private float verticalVel;
     private Vector3 moveVector;
     public float Dash = 0.01f;
+    public Slider DashBar;
+    public ParticleSystem TeleEffect;
+    public ParticleSystem TeleBlast;
 
-  
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         anim = this.GetComponent<Animator>();
         cam = Camera.main;
@@ -35,6 +37,47 @@ public class AnatomyMovement : MonoBehaviour {
     void Update()
     {
         InputMagnitude();
+
+        // Dash
+        if (Input.GetButton("Circle"))
+        {
+            var forward = cam.transform.forward;
+            var right = cam.transform.right;
+
+            forward.y = 0f;
+            right.y = 0f;
+
+            forward.Normalize();
+            right.Normalize();
+            desiredMoveDirection = forward * inputZ + right * inputX;
+
+            this.transform.position += desiredMoveDirection * Dash;
+           
+            TeleBlast.Play();
+            TeleEffect.Play();
+
+            DashBar.value -= 0.02f;
+
+         
+        }
+
+        if (DashBar.value > 0)
+        {
+            Dash = 5;
+        }
+
+        if (DashBar.value == 0)
+        {
+            Dash = 0;
+        }
+
+        if (DashBar.value >= 0)
+        {
+            
+            StartCoroutine(DashWait());
+
+        }
+        //
 
         // keeps the character grounded
         isGrounded = controller.isGrounded;
@@ -81,7 +124,7 @@ public class AnatomyMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-     
+  
     }
 
     void InputMagnitude()
@@ -108,7 +151,14 @@ public class AnatomyMovement : MonoBehaviour {
             anim.SetFloat("InputMagnitude", speed, 0.0f, Time.deltaTime);
         }
     }
-   
-   
+
+    IEnumerator DashWait()
+    {
+
+        yield return new WaitForSeconds(3);
+        DashBar.value += 0.001f;
+
+
+    }
 
 }

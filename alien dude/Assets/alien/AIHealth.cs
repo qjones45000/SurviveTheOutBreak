@@ -25,8 +25,8 @@ public class AIHealth : MonoBehaviour {
             RigidBodyState(false);
             Colliderstate(true);
         }
-      
 
+        
 
         
     }

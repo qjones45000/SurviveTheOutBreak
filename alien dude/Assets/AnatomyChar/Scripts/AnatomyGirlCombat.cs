@@ -7,8 +7,11 @@ public class AnatomyGirlCombat : MonoBehaviour {
     private Animator anim;
     public Collider WeaponCol;
 
+    public GameObject EffectToSpawn;
+    public Transform FirePoint;
+
     public bool Hit;
-    
+    public bool Power;
 
     private AnimatorStateInfo currentBaseState;
     private AnimatorStateInfo UnsheathState;
@@ -94,6 +97,11 @@ public class AnatomyGirlCombat : MonoBehaviour {
             anim.SetBool("Combo3", false);
         }
 
+        if (Input.GetKeyDown("m"))
+        {
+            anim.SetTrigger("PowerStrike");
+        }
+
 
     }
 
@@ -105,6 +113,15 @@ public class AnatomyGirlCombat : MonoBehaviour {
     void Weapon_Not_Hit()
     {
         Hit = false;
+    }
+
+    void IsPower()
+    {
+        Power = true;
+
+        GameObject vfx;
+
+        vfx = Instantiate(EffectToSpawn, FirePoint.transform.position, Quaternion.identity);
     }
 
 }

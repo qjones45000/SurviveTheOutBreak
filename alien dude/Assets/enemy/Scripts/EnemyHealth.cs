@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour {
 
     private Animator anim;
 
+    public ParticleSystem Blood;
+
     public Collider[] Damager;
 
 
@@ -51,6 +53,7 @@ public class EnemyHealth : MonoBehaviour {
         }
 
         GetComponent<Rigidbody>().isKinematic = !state;
+   
 
     }
 
@@ -64,13 +67,14 @@ public class EnemyHealth : MonoBehaviour {
         }
 
         GetComponent<Collider>().enabled = !state;
+   
 
         foreach (Collider Damager in Damager)
         {
             Damager.enabled = true;
         }
 
-
+      
     }
 
 
@@ -104,6 +108,7 @@ public class EnemyHealth : MonoBehaviour {
             Debug.Log("Hit");
             Calc();
             anim.SetTrigger("Move");
+            Blood.Play();
           
         }
     }
@@ -116,12 +121,51 @@ public class EnemyHealth : MonoBehaviour {
             Debug.Log("Hes on fire");
             Calc();
         }
+
+        if (other.tag == ("BlastBack"))
+        {
+
+          
+            DamageEnemy(10);
+            Debug.Log("He got blasted");
+            Calc();
+            GetComponent<Animator>().enabled = false;
+            RigidBodyState(false);
+            Colliderstate(true);
+
+            StartCoroutine(WaitToGetUp());
+
+        
+
+
+
+        }
+
+             
     }
+
+    
 
     private void OnParticleTrigger()
     {
         DamageEnemy(30);
         Debug.Log("Fired");
         Calc();
+    }
+
+    IEnumerator WaitToGetUp()
+    {
+        yield return new WaitForSeconds(5);
+
+        if (Health_Min > 0)
+        {
+
+            anim.Play("GetUp");
+            RigidBodyState(true);
+            Colliderstate(false);
+            GetComponent<Animator>().enabled = true;
+
+
+        }
     }
 }

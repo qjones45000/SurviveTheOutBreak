@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnatomyGirlCombat : MonoBehaviour {
 
@@ -8,10 +9,15 @@ public class AnatomyGirlCombat : MonoBehaviour {
     public Collider WeaponCol;
 
     public GameObject EffectToSpawn;
-    public Transform FirePoint;
+    public Transform SpawnLoca;
+   
+
+    public ParticleSystem Blaster;
+    public ParticleSystem afterBlast;
 
     public bool Hit;
     public bool Power;
+    public bool PowerStop;
 
     private AnimatorStateInfo currentBaseState;
     private AnimatorStateInfo UnsheathState;
@@ -28,12 +34,38 @@ public class AnatomyGirlCombat : MonoBehaviour {
     {
         anim = this.GetComponent<Animator>();
         WeaponCol.enabled = false;
-        
-	}
-	
-	// Update is called once per frame
-	void Update ()
+       
+    }
+
+    private void FixedUpdate()
     {
+        var powerBar = GetComponent<AnatomyMovement>().DashBar;
+
+        if (Power == true)
+        {
+
+
+            GameObject vfx;
+
+            vfx = Instantiate(EffectToSpawn, SpawnLoca.transform.position, Quaternion.identity);
+
+            Destroy(vfx, 3);
+
+            Blaster.Play();
+            Debug.Log("Blasting");
+            
+
+        }
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+
+        var PowerEnd = GetComponent<AnatomyMovement>().DashBar;
+
+
+   
 
         AnatomyCombat();
 
@@ -50,12 +82,21 @@ public class AnatomyGirlCombat : MonoBehaviour {
         }
        
     }
+    
 
     void AnatomyCombat()
     {
 
-       var Dash =  GetComponent<AnatomyMovement>();
+       var PowerEnder =  GetComponent<AnatomyMovement>().DashBar;
 
+        if (PowerEnder.value <= 0)
+        {
+            PowerStop = false;
+        }
+        if (PowerEnder.value >= 0.23f)
+        {
+            PowerStop = true;
+        }
      
     
     
@@ -97,12 +138,21 @@ public class AnatomyGirlCombat : MonoBehaviour {
             anim.SetBool("Combo3", false);
         }
 
-        if (Input.GetKeyDown("m"))
+        if(PowerStop == true)
         {
-            anim.SetTrigger("PowerStrike");
+            if (Input.GetButtonDown("R1"))
+            {
+                anim.SetBool("PowerStrike", true);
+
+               
+            }
+            else
+            {
+                anim.SetBool("PowerStrike", false);
+            }
         }
-
-
+     
+        
     }
 
     void WeaponHit()
@@ -117,11 +167,16 @@ public class AnatomyGirlCombat : MonoBehaviour {
 
     void IsPower()
     {
+        var PowerEnder = GetComponent<AnatomyMovement>().DashBar;
         Power = true;
-
-        GameObject vfx;
-
-        vfx = Instantiate(EffectToSpawn, FirePoint.transform.position, Quaternion.identity);
+        PowerEnder.value -= 0.1f;
     }
+
+    void Is_Not_Power()
+    {
+        Power = false;
+    }
+
+
 
 }

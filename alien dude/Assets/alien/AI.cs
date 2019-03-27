@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class AI : MonoBehaviour {
 
     public Transform Player;
     public Transform Enemy;
 
-    
+    public Slider energyDrain;
+
+    public ParticleSystem Drain;
+
     public float ViewDistance = 10f;
     public float Wander = 3;
     private Vector3 WanderPoint;
@@ -95,10 +99,10 @@ public class AI : MonoBehaviour {
         {
             var Death = GetComponent<EnemyHealth>().Health_Min;
 
-            
+          
 
 
-                Vector3 direction = Player.position - this.transform.position;
+            Vector3 direction = Player.position - this.transform.position;
                 float angle = Vector3.Angle(direction, this.transform.forward);
                 direction.y = 0;
                 this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
@@ -107,6 +111,8 @@ public class AI : MonoBehaviour {
 
                 if (Vector3.Distance(Player.position, this.transform.position) < 20 && angle < 90)
                 {
+                
+
                     anim.SetBool("EnemyIdle", false);
 
                     if (direction.magnitude < 15 && direction.magnitude > 0.96f)
@@ -121,9 +127,21 @@ public class AI : MonoBehaviour {
 
                     if (direction.magnitude <= 0.96f)
                     {
-                        anim.SetBool("EnemyMove", false);
+
+                    
+
+                    anim.SetBool("EnemyMove", false);
                         anim.SetBool("Attack1", true);
                      anim.SetBool("EnemyIdle", false);
+
+                        if(Death <= 0)
+                    {
+                        energyDrain.value -= 0.2f;
+
+                        Drain.Emit(1);
+
+                    }
+           
                     
                     
                     }
@@ -135,7 +153,7 @@ public class AI : MonoBehaviour {
             else
             {
 
-                agent = GetComponent<NavMeshAgent>();
+                
                 anim.SetBool("EnemyIdle", true);
                 anim.SetBool("EnemyMove", false);
                 anim.SetBool("Attack1", false);
@@ -153,33 +171,8 @@ public class AI : MonoBehaviour {
 
     }
 
-    public void wanderer()
-    {
-        if (Vector3.Distance(transform.position, WanderPoint) < 2)
-        {
-            WanderPoint = RandomWalk();
-        }
-        else
-        {
-            agent.SetDestination(WanderPoint);
-        }
-    }
 
 
 
-    public Vector3 RandomWalk()
-    {
-        Vector3 RandomPoint = (Random.insideUnitSphere * Wander) + transform.position;
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(RandomPoint, out navHit, Wander, -1);
-        return new Vector3(navHit.position.x, transform.position.y, navHit.position.z);
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "PaticleFuck")
-        {
-            
-        }
-    }
 }

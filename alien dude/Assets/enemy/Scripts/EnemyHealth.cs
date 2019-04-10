@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour {
 
@@ -13,7 +14,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public Collider[] Damager;
 
-
+    
  
     public GameObject[] Enemy;
 
@@ -37,11 +38,22 @@ public class EnemyHealth : MonoBehaviour {
             GetComponent<Animator>().enabled = false;
             RigidBodyState(false);
             Colliderstate(true);
-           
+
+            Destroy(gameObject, 5f);
+
             
         }
 
+    
+
     }
+
+    private void OnDestroy()
+    {
+        Score.score++;
+    }
+
+
 
     void RigidBodyState(bool state)
     {
